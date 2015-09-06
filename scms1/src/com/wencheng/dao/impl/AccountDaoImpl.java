@@ -23,4 +23,18 @@ public class AccountDaoImpl extends ObjectDaoImpl<Account> implements
 			HibernateUtil.closeSession();
 		}
 	}
+	@Override
+	public Account login(String username, String password) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			String queryString = "select distinct a from Account a fetch all properties where a.username = :name and a.password = :password";
+			Query query = session.createQuery(queryString);
+			query.setString("name",username).setString("password",password);
+			return (Account) query.uniqueResult();			
+		}finally{
+			HibernateUtil.closeSession();
+		}
+	}
+	
 }
