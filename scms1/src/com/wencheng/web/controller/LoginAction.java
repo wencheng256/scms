@@ -1,27 +1,21 @@
-package com.wencheng.web.ui;
+package com.wencheng.web.controller;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.ProjectLevel;
-import com.wencheng.domain.School;
-import com.wencheng.service.ProjectLevelService;
-import com.wencheng.service.SchoolService;
-import com.wencheng.service.impl.ProjectLevelServiceImpl;
-import com.wencheng.service.impl.SchoolServiceImpl;
+import com.wencheng.service.AccountService;
+import com.wencheng.service.impl.AccountServiceImpl;
 
-public class Register extends HttpServlet {
+public class LoginAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public Register() {
+	public LoginAction() {
 		super();
 	}
 
@@ -45,16 +39,12 @@ public class Register extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//dispatcher
-		SchoolService ss = new SchoolServiceImpl();
-		ProjectLevelService ps = new ProjectLevelServiceImpl();
-		List<School> school = ss.list();
-		List<ProjectLevel> level = ps.list();
-		request.setAttribute("version",new Date().toString());
-		request.setAttribute("school", school);
-		request.setAttribute("level", level);
-		request.getRequestDispatcher("/WEB-INF/views/upper/register.jsp").forward(request, response);
-		
+		AccountService as = new AccountServiceImpl();
+		if(as.login(request)){
+			response.sendRedirect(request.getContextPath()+"index");
+		}else{
+			response.sendRedirect(request.getContextPath()+"/login?errormessage=用户名或密码错误");
+		}
 	}
 
 	/**

@@ -23,6 +23,9 @@ public class ProjectServiceImpl implements ProjectService{
 	public boolean create(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		boolean success = false;
+		if(WebUtils.isSubmit(request)){
+			return false;
+		}
 		Account account = new Account();
 		Project project = new Project();
 		WebUtils.getBean(project, request);

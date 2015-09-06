@@ -70,6 +70,7 @@
         <h2>已经有账号？</h2>
         <br/>
         <a class="reg_login" href="index.html"></a> </div>
+        <input name="version" type="hidden" value="${version}" />
     </form>
   </div>
   <div style="clear:both; height:10px;"></div>
