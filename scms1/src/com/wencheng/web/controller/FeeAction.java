@@ -1,22 +1,23 @@
-package com.wencheng.web.ui;
+package com.wencheng.web.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.Project;
-import com.wencheng.service.ProjectService;
-import com.wencheng.service.impl.ProjectServiceImpl;
+import com.wencheng.service.FeeService;
+import com.wencheng.service.impl.FeeServiceImpl;
+import com.wencheng.utils.WebUtils;
 
-public class Index extends HttpServlet {
+public class FeeAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public Index() {
+	public FeeAction() {
 		super();
 	}
 
@@ -40,7 +41,19 @@ public class Index extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/upper/student/index.jsp").forward(request,response);
+		FeeService fs = new FeeServiceImpl();
+		if(WebUtils.isSubmit(request)){
+			response.sendRedirect(request.getContextPath()+"/student/fee");
+			return;
+		}else{
+			if(fs.create(request)){
+				response.sendRedirect(request.getContextPath()+"/student/fee");
+				return;
+			}else{
+				response.sendRedirect(request.getContextPath()+"/student/fee?errormessage="+URLEncoder.encode("创建失败，请重试！","UTF-8"));
+				return;
+			}
+		}
 	}
 
 	/**
@@ -55,7 +68,8 @@ public class Index extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request,response);
+		//doGet
+		doGet(request, response);
 	}
 
 	/**

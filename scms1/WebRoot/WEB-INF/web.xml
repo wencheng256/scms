@@ -51,6 +51,83 @@
     <servlet-name>LoginAction</servlet-name>
     <servlet-class>com.wencheng.web.controller.LoginAction</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProjectInfo</servlet-name>
+    <servlet-class>com.wencheng.web.ui.ProjectInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProjectTeam</servlet-name>
+    <servlet-class>com.wencheng.web.ui.ProjectTeam</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeamAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.TeamAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Mkcap</servlet-name>
+    <servlet-class>com.wencheng.web.controller.Mkcap</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteTeam</servlet-name>
+    <servlet-class>com.wencheng.web.controller.DeleteTeam</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Teacher</servlet-name>
+    <servlet-class>com.wencheng.web.ui.Teacher</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Fee</servlet-name>
+    <servlet-class>com.wencheng.web.ui.Fee</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FeeAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.FeeAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteFee</servlet-name>
+    <servlet-class>com.wencheng.web.controller.DeleteFee</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JournalUI</servlet-name>
+    <servlet-class>com.wencheng.web.ui.JournalUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JournalEditUI</servlet-name>
+    <servlet-class>com.wencheng.web.ui.JournalEditUI</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,7 +138,7 @@
 
   <servlet-mapping>
     <servlet-name>Index</servlet-name>
-    <url-pattern>/index</url-pattern>
+    <url-pattern>/student/index</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Register</servlet-name>
@@ -91,5 +168,68 @@
     <servlet-name>LoginAction</servlet-name>
     <url-pattern>/loginaction</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProjectInfo</servlet-name>
+    <url-pattern>/student/projectinfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProjectTeam</servlet-name>
+    <url-pattern>/student/team</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeamAction</servlet-name>
+    <url-pattern>/student/teamaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Mkcap</servlet-name>
+    <url-pattern>/student/mkcaptain</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteTeam</servlet-name>
+    <url-pattern>/student/deleteteam</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Teacher</servlet-name>
+    <url-pattern>/student/teacher</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Fee</servlet-name>
+    <url-pattern>/student/fee</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FeeAction</servlet-name>
+    <url-pattern>/student/feeaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteFee</servlet-name>
+    <url-pattern>/student/deletefee</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JournalUI</servlet-name>
+    <url-pattern>/student/journallist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JournalEditUI</servlet-name>
+    <url-pattern>/student/journaledit</url-pattern>
+  </servlet-mapping>
+    <filter>
+        <filter-name>isLogin</filter-name>
+        <filter-class>com.wencheng.web.filter.IsLogin</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>isLogin</filter-name>
+        <url-pattern>/student/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>com.wencheng.web.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

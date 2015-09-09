@@ -18,7 +18,6 @@ html{height:100%;overflow:hidden;background:#2f7fb2 url(resources/styles/images/
 <![endif]-->
 </head>
 <body>
-
 <div class="theCenterBox" style="">
   <div class="theLoginBox">
     <div class="loginTxt">登录</div>
@@ -46,6 +45,11 @@ html{height:100%;overflow:hidden;background:#2f7fb2 url(resources/styles/images/
     </div>
   </div>
 </div>
+<c:if test="${errormessage != null}">
+<script>
+	alert("${errormessage}");
+</script>
+</c:if>
 <script>
 	var form = document.forms[0];
 	window.onload = function(){

@@ -7,16 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.Project;
-import com.wencheng.service.ProjectService;
-import com.wencheng.service.impl.ProjectServiceImpl;
-
-public class Index extends HttpServlet {
+public class JournalEditUI extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public Index() {
+	public JournalEditUI() {
 		super();
 	}
 
@@ -40,7 +36,9 @@ public class Index extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/upper/student/index.jsp").forward(request,response);
+
+		//dispatcher
+		request.getRequestDispatcher("/WEB-INF/views/upper/student/journaledit.jsp").forward(request, response);
 	}
 
 	/**
@@ -55,7 +53,8 @@ public class Index extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request,response);
+		//doGet
+		doGet(request, response);
 	}
 
 	/**

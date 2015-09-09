@@ -1,22 +1,22 @@
-package com.wencheng.web.ui;
+package com.wencheng.web.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.Project;
-import com.wencheng.service.ProjectService;
-import com.wencheng.service.impl.ProjectServiceImpl;
+import com.wencheng.service.StudentService;
+import com.wencheng.service.impl.StudentServiceImpl;
 
-public class Index extends HttpServlet {
+public class DeleteTeam extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public Index() {
+	public DeleteTeam() {
 		super();
 	}
 
@@ -40,7 +40,14 @@ public class Index extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/upper/student/index.jsp").forward(request,response);
+		StudentService ss = new StudentServiceImpl();
+		if(ss.delete(request)){
+			response.sendRedirect(request.getContextPath()+"/student/team");
+			return;
+		}else{
+			response.sendRedirect(request.getContextPath()+"/student/team?errormessage="+URLEncoder.encode("删除失败","UTF-8"));
+			return;
+		}
 	}
 
 	/**
@@ -55,7 +62,8 @@ public class Index extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request,response);
+		//doGet
+		doGet(request, response);
 	}
 
 	/**

@@ -35,6 +35,7 @@ public class Project {
 	private List<Message> messages = new LinkedList<Message>();	//站内信
 	private Account account;							//登陆账户
 	private int process;								//项目进度
+	private boolean important;
 	private List<Error> errors = new LinkedList<Error>(); //警告处分
 	private List<Fee> fees = new LinkedList<Fee>();
 	
@@ -165,5 +166,11 @@ public class Project {
 	}
 	public void setFees(List<Fee> fees) {
 		this.fees = fees;
+	}
+	public boolean isImportant() {
+		return important;
+	}
+	public void setImportant(boolean important) {
+		this.important = important;
 	}
 }

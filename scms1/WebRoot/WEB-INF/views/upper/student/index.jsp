@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@include file="scms.jsp" %>
+<%@include file="../scms.jsp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -21,7 +21,7 @@
             <div class="rightbox">
 
     <h2 class="mbx">
-        我的学习中心&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+      我的学习中心&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 
     <div class="dhbg">
         <div class="dh1" style="margin: 0 27px 15px 0;">
@@ -150,13 +150,9 @@
 
             </div>
         </div>
-        <div class="footer">
-            <p>
-                &copy;copyright 2012 广博教育 csgb.net 版权所有 </p>
-        </div>
+<jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </div>
 	<div style="text-align:center;">
-<p>来源：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
 </div>
 </body>
 </html>

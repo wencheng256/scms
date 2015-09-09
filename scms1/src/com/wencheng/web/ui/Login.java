@@ -1,6 +1,7 @@
 package com.wencheng.web.ui;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +38,9 @@ public class Login extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//dispatcher
+		if(request.getParameter("errormessage") != null){
+			request.setAttribute("errormessage",URLDecoder.decode(request.getParameter("errormessage"), "UTF-8"));
+		}
 		request.getRequestDispatcher("/WEB-INF/views/upper/login.jsp").forward(request, response);
 	}
 

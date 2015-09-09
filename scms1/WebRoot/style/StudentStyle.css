@@ -9,38 +9,38 @@ input, select{vertical-align:middle;}
 body{font-size:12px; line-height:22px;color:#333;}
 .page{width:980px; margin:0 auto; height:70px;position:relative; }
 .page5{width:980px; margin:0 auto; position:relative;}
-.header{height:133px; position:relative;width:930px; margin:0 auto; font-size:12px; line-height:22px; background:url(../Images/Student/kao_top.jpg) no-repeat 0 -20px;}
-.topindex{height:480px; position:relative; background:url(../Images/Student/index/bg.gif) no-repeat 30px 0;}
+.header{height:133px; position:relative;width:930px; margin:0 auto; font-size:12px; line-height:22px; background:url(../images/Student/kao_top.jpg) no-repeat 0 -20px;}
+.topindex{height:480px; position:relative; background:url(../images/Student/index/bg.gif) no-repeat 30px 0;}
 .login{padding:20px;background:#fff; }.login td{padding:6px 3px;}
 .page2{width:1000px; margin:0 auto; font-size:12px; line-height:22px;color:#777;}
 #cct{width:593px;height:305px;position:absolute;left: -3px;top: 130px;}
 #cct2{width:467px;height:266px;position:absolute;left: -3px;top: 130px;}
 .loginbox{width:327px; height:236px; position:absolute; right:60px; top:165px;border:1px #CACACA solid;}
 .loginbox2{width:500px; position:absolute; right:60px; top:100px; border:1px #CACACA solid;}
-.drh{font-size:14px; height:35px; line-height:35px; padding-left:10px; background:url(../Images/Student/index/title.jpg) repeat-x;}
+.drh{font-size:14px; height:35px; line-height:35px; padding-left:10px; background:url(../images/Student/index/title.jpg) repeat-x;}
 
 
 #logo{position:absolute;left:0;top:12px;}
 #logo a{display:block;}
-.banner{background:#358edd url(../Images/Student/banner.jpg) repeat-x top;}
+.banner{background:#358edd url(../images/Student/banner.jpg) repeat-x top;}
 .width{width:100%; margin:0 auto; position:relative; height:70px; }
-.bgh{background:url(../Images/Student/topbgright.jpg) no-repeat top right;}
+.bgh{background:url(../images/Student/topbgright.jpg) no-repeat top right;}
 .topxx{ text-align:right; height:24px;color:#fff; padding:5px 4px 5px 0; letter-spacing:3px; font-size:11px;}
 .topxx a{color:#fff; margin-left:5px; text-decoration:underline;}
 .blog_nav{overflow:hidden; _zoom:1; height:29px; line-height:29px; font-size:13px; margin-top:5px; width:800px; position:absolute; bottom:0; left:177px;}
 .blog_nav ul{padding-left:10px;}
-.blog_nav ul li{float:left; text-align:center;width:90px; letter-spacing:2px; margin-right:8px; background:url(../Images/Student/sns_top_nav_bg.png) repeat-x;border:1px #6fb0e9 solid; border-bottom:none;}
+.blog_nav ul li{float:left; text-align:center;width:90px; letter-spacing:2px; margin-right:8px; background:url(../images/Student/sns_top_nav_bg.png) repeat-x;border:1px #6fb0e9 solid; border-bottom:none;}
 .blog_nav ul li a{color:#fff;display:block;}
-.blog_nav ul li a:hover{background:url(../Images/Student/nav_hover.png) repeat-x; }
-.blog_nav .hover{ background:url(../Images/Student/nav_hover.png) repeat-x; width:90px;}
+.blog_nav ul li a:hover{background:url(../images/Student/nav_hover.png) repeat-x; }
+.blog_nav .hover{ background:url(../images/Student/nav_hover.png) repeat-x; width:90px;}
 
 .box{overflow:hidden; _zoom:1;}
 .mtop{margin-top:10px;}
 .leftbox{width:140px; float:left;}
 .rightbox{ margin-left:155px; min-height:500px; _height:500px;}
-.title1{background:url(../Images/Student/title1.jpg) no-repeat; height:30px; line-height:30px; font-size:14px; padding-left:15px; color:#fff;}
-.leftnav{background:url(../Images/Student/bgleftli.jpg) repeat-y; padding:10px 10px 5px;}
-.lefbot{background:url(../Images/Student/bgleftbot.jpg) no-repeat; overflow:hidden; height:8px;}
+.title1{background:url(../images/Student/title1.jpg) no-repeat; height:30px; line-height:30px; font-size:14px; padding-left:15px; color:#fff;}
+.leftnav{background:url(../images/Student/bgleftli.jpg) repeat-y; padding:10px 10px 5px;}
+.lefbot{background:url(../images/Student/bgleftbot.jpg) no-repeat; overflow:hidden; height:8px;}
 .leftnav ul li{height:20px; padding:3px 0 6px;}
 .leftnav ul li a{color:#185697;}
 .leftnav .bor{border-bottom:1px #ddd dotted; margin-bottom:5px;}
@@ -51,29 +51,29 @@ body{font-size:12px; line-height:22px;color:#333;}
 .data{ width:665px; margin:20px auto 0;}
 .data th{background:#308DC9; font-size:18px; color:#fff; border-bottom:1px #E3E3E3 solid;border-right:1px #E3E3E3 solid; line-height:26px;} 
 .data td{border-bottom:1px #E3E3E3 solid;border-right:1px #E3E3E3 solid; height:45px; text-align:center;font-size:14px;}
-.datetop{background:url(../Images/Student/datetop.jpg) repeat-x; line-height:38px; height:38px;border:1px #E3E3E3 solid; text-align:center; font-size:18px; position:relative;}
+.datetop{background:url(../images/Student/datetop.jpg) repeat-x; line-height:38px; height:38px;border:1px #E3E3E3 solid; text-align:center; font-size:18px; position:relative;}
 #left_arrow{position:absolute; left:20px; top:7px;}
 #right_arrow{position:absolute; right:20px; top:7px;}
 .data a{margin-top:0;}
 .reding{background:#f00; color:#fff;}
 .greening{background:#86EA4E; color:#fff;}
 .yellowing{background:#F4D400; color:#fff;}
-.datafoot{background:url(../Images/Student/bg_date.jpg) repeat-x; height:35px; padding:10px; margin-bottom:10px; color:#f40;}
+.datafoot{background:url(../images/Student/bg_date.jpg) repeat-x; height:35px; padding:10px; margin-bottom:10px; color:#f40;}
 .data table{border-top:1px #E3E3E3 solid;border-left:1px #E3E3E3 solid;}
 .kc{ height:12px; line-height:12px; overflow:hidden; color:#fff}
 .mbx{color:#185697; font-size:12px; margin-bottom:10px; font-weight:100; border-bottom:1px #ddd dotted; line-height:30px;}
 .rightgg{float:right; width:182px;}
-.title2{background:url(../Images/Student/title2.jpg) no-repeat; line-height:27px; font-size:14px; color:#6BB044; padding-left:10px;}
-.ggbox{background:url(../Images/Student/bgrbg.jpg) repeat-y; padding:10px 10px 5px;}
-.ggbot{background:url(../Images/Student/bgrbot.jpg) no-repeat; height:12px;}
-.ggbox p{background:url(../Images/Student/dian.jpg) no-repeat 0 11px; line-height:24px; height:24px; overflow:hidden; padding-left:8px;}
+.title2{background:url(../images/Student/title2.jpg) no-repeat; line-height:27px; font-size:14px; color:#6BB044; padding-left:10px;}
+.ggbox{background:url(../images/Student/bgrbg.jpg) repeat-y; padding:10px 10px 5px;}
+.ggbot{background:url(../images/Student/bgrbot.jpg) no-repeat; height:12px;}
+.ggbox p{background:url(../images/Student/dian.jpg) no-repeat 0 11px; line-height:24px; height:24px; overflow:hidden; padding-left:8px;}
 .ggbox ul li{overflow:hidden; _zoom:1; padding:4px 0; line-height:24px;}
 .ggbox_img{border:#ddd solid 1px; padding:1px; float:left; margin-right:7px;}
 .clear{clear:both;}
 .cztable{padding:15px 0;}
 .cztable table{border-bottom:#cfe1f9 solid 4px;border-right:#cfe1f9 solid 1px;}
 .cztable td, .cztable th{border-top:#cfe1f9 solid 1px; border-left:#cfe1f9 solid 1px; padding:6px 5px; }
-.cztable th{background:#eef7fc url(../Images/Student/bgtable.jpg) repeat-x; line-height:22px; color:#185697;}
+.cztable th{background:#eef7fc url(../images/Student/bgtable.jpg) repeat-x; line-height:22px; color:#185697;}
 .cztable td a{color:#185697;}
 .cztable .xxleft{text-align:left;}
 .feiye{padding:20px; text-align:center;}
@@ -92,8 +92,8 @@ body{font-size:12px; line-height:22px;color:#333;}
 .acc_data{padding:20px 0;}
 .table_style{width:90%; margin:0 auto;}
 .table_style td{padding:5px;}
-.input2{background:url(../Images/Student/bginput.gif) repeat-x top; height:26px; overflow:hidden; border:1px #949494 solid; padding:0 10px; cursor:pointer; font-size:12px;}
-.input_2{border-top:1px #999 solid; border-left:1px #999 solid; background:#fff url(../Images/Student/bg_inputbg.jpg) repeat-x top; border-bottom:1px #ddd solid; border-right:1px #ddd solid; padding:2px;color:#333; line-height:18px; font-size:12px;}
+.input2{background:url(../images/Student/bginput.gif) repeat-x top; height:26px; overflow:hidden; border:1px #949494 solid; padding:0 10px; cursor:pointer; font-size:12px;}
+.input_2{border-top:1px #999 solid; border-left:1px #999 solid; background:#fff url(../images/Student/bg_inputbg.jpg) repeat-x top; border-bottom:1px #ddd solid; border-right:1px #ddd solid; padding:2px;color:#333; line-height:18px; font-size:12px;}
 .photo{border:1px #ddd solid;}
 
 .friends{padding:10px; color:#999;}
@@ -102,7 +102,7 @@ body{font-size:12px; line-height:22px;color:#333;}
 .green{color:#093;}
 
 .yao{overflow:hidden; _zoom:1; width:650px; margin:30px auto;}
-.yao ul li{float:left; width:300px; text-align:center; padding:20px 0; background:url(../Images/Student/bg_py.gif) repeat-x bottom; border:1px #ddd solid; margin:0 20px 20px 0;}
+.yao ul li{float:left; width:300px; text-align:center; padding:20px 0; background:url(../images/Student/bg_py.gif) repeat-x bottom; border:1px #ddd solid; margin:0 20px 20px 0;}
 .yao ul li a{color:#4C9F1F;}
 .grzl{margin:0 auto; width:90%; background:#FFFCE8;border:1px #FEEAD3 solid; margin-bottom:20px;}
 .grzl p{margin-bottom:4px;}
@@ -112,10 +112,10 @@ body{font-size:12px; line-height:22px;color:#333;}
 .frri{float:right; padding-bottom:3px;}
 .blue{color:#06c;}
 
-.topbg{background:url(../Images/Student/bgtop.png) repeat-x;}
+.topbg{background:url(../images/Student/bgtop.png) repeat-x;}
 
 #pupop{border:1px #1C82C3 solid;}
-#pupop_title{background:url(../Images/Student/kao_top.jpg) no-repeat 0 -275px; height:23px; font-size:14px; font-weight:700; color:#fff; line-height:23px; padding:4px 10px 2px 10px;border-bottom:1px #1C82C3 solid;}
+#pupop_title{background:url(../images/Student/kao_top.jpg) no-repeat 0 -275px; height:23px; font-size:14px; font-weight:700; color:#fff; line-height:23px; padding:4px 10px 2px 10px;border-bottom:1px #1C82C3 solid;}
 #pupop_title span{float:right;}
 #from{ padding:25px;}
 
@@ -128,7 +128,7 @@ body{font-size:12px; line-height:22px;color:#333;}
 .hyfz{float:right; width:160px; margin-top:25px;}
 .pyleft{margin-right:180px;}
 .border{border:1px #ddd solid;}
-.title3{background:url(../Images/Student/bg_title.gif) repeat-x; line-height:27px; padding:0 10px; font-size:12px; border-bottom:1px #ddd solid;}
+.title3{background:url(../images/Student/bg_title.gif) repeat-x; line-height:27px; padding:0 10px; font-size:12px; border-bottom:1px #ddd solid;}
 .hybox{padding:10px;}
 .hybox p{border-bottom:1px #eee solid; margin-bottom:5px;}
 .fright{float:right;}
@@ -145,15 +145,15 @@ body{font-size:12px; line-height:22px;color:#333;}
 .zyb{height:20px; overflow:hidden;}
 .zyright{width:216px; float:right;}
 .zyright a{color:#1e50a2;}
-.fxbox{background:url(../Images/Student/zyk/fxbg.jpg) no-repeat; border:1px #d0e1da solid; text-align:center; padding:12px 10px 5px;}
+.fxbox{background:url(../images/Student/zyk/fxbg.jpg) no-repeat; border:1px #d0e1da solid; text-align:center; padding:12px 10px 5px;}
 .fxbox p{margin-bottom:11px;}
 .fxbox strong{color:#f30; font-size:16px;}
 .fxbox ul li{line-height:28px; height:28px; overflow:hidden; border-top:1px #ddd dotted; margin-top:6px;}
 .tjxt{padding:10px 12px 0;}
 .tjxt ul li{overflow:hidden; _zoom:1; padding-bottom:10px;}
 .zxzy{padding:10px;}
-.zxzy ul li{background:url(../Images/Student/dian.jpg) no-repeat 0 10px; height:25px; overflow:hidden; padding-left:12px;}
-.zuanyb{background:url(../Images/Student/zyk/sm.gif) no-repeat 10px 35px;padding:10px;}
+.zxzy ul li{background:url(../images/Student/dian.jpg) no-repeat 0 10px; height:25px; overflow:hidden; padding-left:12px;}
+.zuanyb{background:url(../images/Student/zyk/sm.gif) no-repeat 10px 35px;padding:10px;}
 .zuanyb ul li{ padding-left:30px; height:24px; overflow:hidden;}
 .zuanyb span{float:right;}
 .mbx2{ border-bottom:1px #ddd dotted; margin-bottom:20px; line-height:30px;}
@@ -186,7 +186,7 @@ body{font-size:12px; line-height:22px;color:#333;}
 .vright .post{font-size:12px;}
 .depth-1{padding:15px; border-bottom:1px #ddd solid;}
 .depth-2{padding:8px 15px; border:1px #ddd dashed; background:#f9f9f9; margin:10px 0;}
-.depth-3{padding:8px 15px; border:1px #ddd dashed; background:#fffddd url(../Images/Student/tjdan.jpg) no-repeat 550px 0px; margin:10px 0;}
+.depth-3{padding:8px 15px; border:1px #ddd dashed; background:#fffddd url(../images/Student/tjdan.jpg) no-repeat 550px 0px; margin:10px 0;}
 .post{font-size:10px; color:#999; line-height:14px; padding-bottom:6px;}
 .revertcomment{float:right;}
 .textarea{padding:20px 15px 0;}
@@ -209,8 +209,8 @@ body{font-size:12px; line-height:22px;color:#333;}
 
 .l_nav{border:#bdd7f2 1px solid; border-top:#0080c4 4px solid;border-bottom:#0080c4 4px solid; background:#ebf7ff; margin-left:10px;}
 .l_nav ul li{ line-height:38px;}
-.l_nav ul li a{border-bottom:1px #98c9ee dotted; display:block; background:url(../Images/Student/ico_wd.png) no-repeat 15px 15px; padding-left:35px;}
-.l_nav ul li a:hover{background:#fff url(../Images/Student/ico_wd.png) no-repeat 16px 15px;}
+.l_nav ul li a{border-bottom:1px #98c9ee dotted; display:block; background:url(../images/Student/ico_wd.png) no-repeat 15px 15px; padding-left:35px;}
+.l_nav ul li a:hover{background:#fff url(../images/Student/ico_wd.png) no-repeat 16px 15px;}
 
 /* ��ҳ��ʽ */
 .MainStyle {

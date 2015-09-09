@@ -1,5 +1,6 @@
 package com.wencheng.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +13,11 @@ public class Student {
 	private int id;
 	private String name;
 	private String number;
+	private String phone;
 	private String email;
 	private School school;
-	private int degree;
-	private boolean isCap;
+	private int degree;					//1本科 2硕士
+	private boolean Cap;
 	private Project project;
 	
 	@Id
@@ -60,10 +62,10 @@ public class Student {
 		this.degree = degree;
 	}
 	public boolean isCap() {
-		return isCap;
+		return Cap;
 	}
-	public void setCap(boolean isCap) {
-		this.isCap = isCap;
+	public void setCap(boolean cap) {
+		Cap = cap;
 	}
 	@ManyToOne
 	@JoinColumn(name="project")
@@ -73,5 +75,10 @@ public class Student {
 	public void setProject(Project project) {
 		this.project = project;
 	}
-	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 }

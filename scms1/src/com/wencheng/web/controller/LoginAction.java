@@ -1,6 +1,7 @@
 package com.wencheng.web.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -41,9 +42,9 @@ public class LoginAction extends HttpServlet {
 			throws ServletException, IOException {
 		AccountService as = new AccountServiceImpl();
 		if(as.login(request)){
-			response.sendRedirect(request.getContextPath()+"index");
+			response.sendRedirect(request.getContextPath()+"/student/index");
 		}else{
-			response.sendRedirect(request.getContextPath()+"/login?errormessage=用户名或密码错误");
+			response.sendRedirect(request.getContextPath()+"/login?errormessage="+URLEncoder.encode("用户名或密码错误","UTF-8"));
 		}
 	}
 

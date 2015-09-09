@@ -1,22 +1,24 @@
 package com.wencheng.web.ui;
 
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.Project;
-import com.wencheng.service.ProjectService;
-import com.wencheng.service.impl.ProjectServiceImpl;
+import com.wencheng.service.FeeService;
+import com.wencheng.service.impl.FeeServiceImpl;
 
-public class Index extends HttpServlet {
+public class Fee extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public Index() {
+	public Fee() {
 		super();
 	}
 
@@ -40,7 +42,17 @@ public class Index extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/upper/student/index.jsp").forward(request,response);
+		//dispatcher
+		FeeService fs = new FeeServiceImpl();
+		Double doub = Double.valueOf(0d);
+		List<com.wencheng.domain.Fee> list = fs.list(request);
+		String message = request.getParameter("errormessage");
+		if(message != null)
+			request.setAttribute("message",URLDecoder.decode(message,"UTF-8"));
+		request.setAttribute("fees", list);
+		request.setAttribute("amount", doub);
+		request.setAttribute("version", new Date().toString());
+		request.getRequestDispatcher("/WEB-INF/views/upper/student/fee.jsp").forward(request, response);
 	}
 
 	/**
@@ -55,7 +67,8 @@ public class Index extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request,response);
+		//doGet
+		doGet(request, response);
 	}
 
 	/**

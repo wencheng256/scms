@@ -26,7 +26,7 @@ request.setAttribute("path", basePath);
                             自考</option>
 
                     </select>
-                    910513201419学员：邹智，欢迎您！ <a href="MyInfo/Index.aspx.html">我的信息</a> <a href="User/StudentInfor/systemMsge.aspx.html">
+                  ${project.number} ：${project.name}，欢迎您！ <a href="MyInfo/Index.aspx.html">我的信息</a> <a href="User/StudentInfor/systemMsge.aspx.html">
                         通知</a> <a href="User/Account/ChangePasswd.aspx.html">密码修改</a> <a onclick="loginOut()"
                             href="javascript:">安全退出</a>
                 </div>

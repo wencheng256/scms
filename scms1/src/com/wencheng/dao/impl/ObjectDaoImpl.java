@@ -52,9 +52,8 @@ public class ObjectDaoImpl<T> implements ObjectDao<T> {
 		Session session = HibernateUtil.getSession();
 		Transaction ts = session.beginTransaction();
 		try{
-			String queryString = "DELETE FROM :table o WHERE o.id = :id";
+			String queryString = "DELETE FROM "+cla.getName()+" o WHERE o.id = :id";
 			Query query = session.createQuery(queryString);
-			query.setString("table",cla.getName());
 			query.setInteger("id",id);
 			if(query.executeUpdate()>0){
 				ts.commit();
@@ -76,7 +75,9 @@ public class ObjectDaoImpl<T> implements ObjectDao<T> {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSession();
 		try{
-			return cla.cast(session.load(cla, id));
+			String queryString = "SELECT distinct p from "+cla.getName()+" p where id = :id";
+			Query query = session.createQuery(queryString).setInteger("id", id);
+			return (T) query.uniqueResult();
 		}catch(HibernateException e){
 			e.printStackTrace();
 			return null;

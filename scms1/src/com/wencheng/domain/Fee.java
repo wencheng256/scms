@@ -1,5 +1,6 @@
 package com.wencheng.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Fee {
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Column(nullable=false)
 	public String getReason() {
 		return reason;
 	}
@@ -30,13 +32,14 @@ public class Fee {
 		this.reason = reason;
 	}
 	@ManyToOne
-	@JoinColumn(name="project")
+	@JoinColumn(name="project",nullable=false)
 	public Project getProject() {
 		return project;
 	}
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	@Column(nullable=false)
 	public double getAmount() {
 		return amount;
 	}

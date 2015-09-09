@@ -1,22 +1,22 @@
-package com.wencheng.web.ui;
+package com.wencheng.web.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.Project;
-import com.wencheng.service.ProjectService;
-import com.wencheng.service.impl.ProjectServiceImpl;
+import com.wencheng.service.StudentService;
+import com.wencheng.service.impl.StudentServiceImpl;
 
-public class Index extends HttpServlet {
+public class TeamAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public Index() {
+	public TeamAction() {
 		super();
 	}
 
@@ -40,7 +40,12 @@ public class Index extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/upper/student/index.jsp").forward(request,response);
+		StudentService ss = new StudentServiceImpl();
+		if(ss.create(request)){
+			response.sendRedirect(request.getContextPath()+"/student/team");
+		}else{
+			response.sendRedirect(request.getContextPath()+"/student/team?errormessage="+URLEncoder.encode("添加失败，请检查相关信息","UTF-8"));
+		}
 	}
 
 	/**
@@ -55,7 +60,8 @@ public class Index extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request,response);
+		//doGet
+		doGet(request, response);
 	}
 
 	/**

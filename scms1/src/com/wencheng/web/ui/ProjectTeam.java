@@ -1,22 +1,28 @@
 package com.wencheng.web.ui;
 
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.Project;
-import com.wencheng.service.ProjectService;
-import com.wencheng.service.impl.ProjectServiceImpl;
+import com.wencheng.domain.School;
+import com.wencheng.domain.Student;
+import com.wencheng.service.SchoolService;
+import com.wencheng.service.StudentService;
+import com.wencheng.service.impl.SchoolServiceImpl;
+import com.wencheng.service.impl.StudentServiceImpl;
 
-public class Index extends HttpServlet {
+public class ProjectTeam extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public Index() {
+	public ProjectTeam() {
 		super();
 	}
 
@@ -40,7 +46,21 @@ public class Index extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/upper/student/index.jsp").forward(request,response);
+
+		//dispatcher
+		StudentService ss = new StudentServiceImpl();
+		SchoolService ss1 = new SchoolServiceImpl();
+		List<School> list = ss1.list();
+		request.setAttribute("school", list);
+		List<Student> students= ss.list(request);
+		String error = request.getParameter("errormessage");
+		if(error != null){
+			error = URLDecoder.decode(error, "UTF-8");
+			request.setAttribute("errormessage",error);
+		}
+		request.setAttribute("students", students);
+		request.setAttribute("version",new Date());
+		request.getRequestDispatcher("/WEB-INF/views/upper/student/team.jsp").forward(request, response);
 	}
 
 	/**
@@ -55,7 +75,8 @@ public class Index extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request,response);
+		//doGet
+		doGet(request, response);
 	}
 
 	/**

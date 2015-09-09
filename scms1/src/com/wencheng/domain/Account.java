@@ -37,7 +37,7 @@ public class Account {
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = WebUtils.MD5(password);
+		this.password = password;
 	}
 	@OneToOne
 	@JoinColumn(name="project",referencedColumnName="id")

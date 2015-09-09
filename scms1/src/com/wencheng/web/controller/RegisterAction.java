@@ -1,6 +1,7 @@
 package com.wencheng.web.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -59,9 +60,9 @@ public class RegisterAction extends HttpServlet {
 		//doGet
 		ProjectService ps = new ProjectServiceImpl();
 		if(ps.create(request)){
-			System.out.println("success");
+			response.sendRedirect(request.getContextPath()+"/login?message="+URLEncoder.encode("注册成功", "utf-8"));
 		}else{
-			System.out.println("error");
+			System.out.println(request.getContextPath()+"/register?message="+URLEncoder.encode("注册失败，请重试", "utf-8"));
 		}
 	}
 

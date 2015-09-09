@@ -32,13 +32,9 @@ public class ProjectServiceImpl implements ProjectService{
 		project.setStartingTime(new Date());
 		success = dao.create(project);
 		WebUtils.getBean(account,request);
+		account.setPassword(WebUtils.MD5(account.getPassword()));
 		account.setProject(project);
 		success = daoAccount.create(account);
-		if(success){
-			request.getSession().setAttribute("login",true);
-		}else{
-			request.getSession().setAttribute("login",null);
-		}
 		return success;
 	}
 
@@ -73,6 +69,16 @@ public class ProjectServiceImpl implements ProjectService{
 			return false;
 		}
 		return dao.checkNumber(number);
+	}
+
+	@Override
+	public Project find(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		Integer id =  (Integer) request.getSession().getAttribute("login");
+		if(id == null){
+			return null;
+		}
+		return dao.find(Project.class, id);
 	}
 	
 }
