@@ -17,32 +17,25 @@
         <div class="rightbox">
                 
 
-<h2 class="mbx">我的信息 &gt; 班级信息&nbsp;&nbsp;&nbsp;自考</h2>  
+<h2 class="mbx">日志管理 &gt; 项目日志&nbsp;&nbsp;&nbsp;创建日志</h2>  
 <div class="morebt">
     
 
-<ul id="ulStudMsgHeadTab">
-    <li><a class="tab2" onclick="" href="Index.aspx.html">个人资料</a> </li>
-    <li><a class="tab2" onclick="" href="ClassInfo.aspx.html">班级信息</a></li>
-    <li><a class="tab2" onclick="" href="../User/StudentInfor/Letter.aspx.html">短信息</a></li>
-    <li><a class="tab2" onclick="" href="../User/StudentInfor/systemMsge.aspx.html">通知<span style="color:#ff0000; padding-left:5px;" id="unreadSysMsgCount"></span></a></li>
-    <li><a class="tab2" onclick="" href="Objection.aspx.html">我的异议</a></li>
-</ul>
 
 </div>
 <div class="cztable">
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <table border="0" cellspacing="0" cellpadding="0" width="100%" >
         <tr>
-            <td width="91" align="right">班级名称：</td>
-            <td colspan="5">2013秋经济法学&nbsp;</td>
+            <td width="91" align="right">日志名称：</td>
+            <td colspan="5"><input type="text" name="title" style="width:80%;"placeholder="请输入标题"/></td>
         </tr>
         <tr>
-            <td align="right">班级QQ群：</td>
-            <td colspan="5">57197804 &nbsp;</td>
+            <td align="right">撰写人：</td>
+            <td colspan="5" ><select style="width:50%"></select></td>
         </tr>
         <tr>
-            <td align="right">班级宣传语：</td>
-            <td colspan="5">&nbsp;</td>
+            <td align="right">日志状态：</td>
+            <td colspan="5">草稿： <input type="radio"/> 私有： <input type="radio"/> 公开： <input type="radio"/> 回收站：<input type="radio" disabled="disabled"/></td>
         </tr>
         <tr>
             <td align="right">学校名称：</td>
@@ -89,10 +82,7 @@
 
             </div>
         </div>
-        <div class="footer">
-            <p>
-                &copy;copyright 2012 广博教育 csgb.net 版权所有 站长统计</p>
-        </div>
+	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </div>
 </body>
 </html>
