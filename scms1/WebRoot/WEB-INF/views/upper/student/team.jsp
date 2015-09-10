@@ -43,7 +43,7 @@
         </tr>
 	<c:forEach items="${students}" var="stu" varStatus="statu">
         <tr style="height: 28px" class="tdbg" align="center">
-            <td align="center">${statu.index}</td>
+            <td align="center">${statu.index+1}</td>
 			<td align="center">${stu.name}</td>
 			<td align="center">${stu.number}</td>
 			<td align="center">${stu.phone}</td>

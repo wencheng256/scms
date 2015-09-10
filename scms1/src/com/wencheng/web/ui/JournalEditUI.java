@@ -1,11 +1,17 @@
 package com.wencheng.web.ui;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.wencheng.dao.impl.JournalTypeDaoImpl;
+import com.wencheng.domain.Student;
+import com.wencheng.domain.Type;
+import com.wencheng.service.impl.StudentServiceImpl;
 
 public class JournalEditUI extends HttpServlet {
 
@@ -37,6 +43,12 @@ public class JournalEditUI extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		JournalTypeDaoImpl jt = new JournalTypeDaoImpl();
+		StudentServiceImpl ss = new StudentServiceImpl();
+		List<Student> students = ss.list(request);
+		List<Type> type = jt.list("Type");
+		request.setAttribute("type", type);
+		request.setAttribute("students", students);
 		//dispatcher
 		request.getRequestDispatcher("/WEB-INF/views/upper/student/journaledit.jsp").forward(request, response);
 	}

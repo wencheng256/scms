@@ -24,6 +24,7 @@
 
 </div>
 <div class="cztable">
+	<form action="${path }student/journalaction">
     <table border="0" cellspacing="0" cellpadding="0" width="100%" >
         <tr>
             <td width="91" align="right">日志名称：</td>
@@ -31,58 +32,50 @@
         </tr>
         <tr>
             <td align="right">撰写人：</td>
-            <td colspan="5" ><select style="width:50%"></select></td>
+            <td colspan="5" ><select style="width:50%">
+                <c:forEach items="${students}" var="stu">
+            		<option value="${stu.id}" >-----------------------${stu.name}-----------------------</option>
+            	</c:forEach>
+            </select></td>
         </tr>
         <tr>
             <td align="right">日志状态：</td>
             <td colspan="5">草稿： <input type="radio"/> 私有： <input type="radio"/> 公开： <input type="radio"/> 回收站：<input type="radio" disabled="disabled"/></td>
         </tr>
         <tr>
-            <td align="right">学校名称：</td>
-            <td colspan="5">湖南大学&nbsp;</td>
-        </tr>
-            
-            <tr>
-                    <td align="right"><div align="right">班主任老师：</div>&nbsp;</td>
-                    <td><div align="left">王娟</div></td>
-                    <td><div align="right">电话：</div>&nbsp;</td>
-                    <td><div align="left">15388088011</div>&nbsp;</td>
-                    <td align="right"><div align="right">在线交流：</div>&nbsp;</td>
-                    <td align="right"><div align="left"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2::41" alt="点击这里给我发消息" /></a></div>&nbsp;</td>
-                  </tr>
-            
-        <tr>
-            <td align="right">工作评价：</td>
-            <td colspan="5">
-                <input value="满意" checked="checked" type="radio" name="workAssess" />满意
-                <input value="一般" type="radio" name="workAssess" />一般
-                <input value="差" type="radio" name="workAssess" />差
-            </td>
+            <td align="right">日志类型：</td>
+            <td colspan="5"><select style="width:50%" name="type">
+            	<c:forEach items="${type}" var="ty">
+            		<option value="${ty.id }">-----------------------${ty.name }-----------------------</option>
+            	</c:forEach>
+            </select></td>
         </tr>
         <tr>
             <td rowspan="3" align="right">问题反馈：</td>
-            <td colspan="5">
-                <input value="4" checked="checked" type="radio" name="problemType" />提问
-                
-                <input value="1" type="radio" name="problemType" />投诉
+            <td colspan="5" style="text-align:right;">
+            	<font color="red">点击下方编辑器右上角的全屏，方便编辑日志！<font/>
             </td>
         </tr>
         <tr>
-            <td colspan="5">
-                <textarea name="problemContent" id="problemContent" cols="80" rows="6" class="input_2"></textarea>
+            <td colspan="5" style="position:relative;">
+                <textarea name="content" id="edit" cols="80" style="width:100%;" rows="6" class="input_2"></textarea>
             </td>
         </tr>
         <tr>
-            <td colspan="5" align="left" valign="middle">
+            <td colspan="5" align="center" valign="middle">
                 <input type="button" name="button2" id="button2" value="点击提交" class="input2" onclick="onSaveProblem()" />
             </td>
         </tr>
     </table>
+    </form>
 </div>
 
             </div>
         </div>
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </div>
+    <script>
+    var ue = UE.getEditor('edit');
+    </script>
 </body>
 </html>

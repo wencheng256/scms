@@ -11,8 +11,7 @@ import javax.persistence.ManyToOne;
 public class Journal {
 	
 	private int id;
-	private boolean isPublic;
-	private boolean isCao;
+	private int status;					//0草稿 1私有 2公开 3回收站
 	private Student editor;
 	private String content;
 	private Type type;
@@ -26,17 +25,11 @@ public class Journal {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public boolean isPublic() {
-		return isPublic;
+	public int getStatus() {
+		return status;
 	}
-	public void setPublic(boolean isPublic) {
-		this.isPublic = isPublic;
-	}
-	public boolean isCao() {
-		return isCao;
-	}
-	public void setCao(boolean isCao) {
-		this.isCao = isCao;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	@ManyToOne
 	@JoinColumn(name="editor")
