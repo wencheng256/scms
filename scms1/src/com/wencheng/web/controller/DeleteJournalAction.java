@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.wencheng.service.JournalService;
 import com.wencheng.service.impl.JournalServiceImpl;
 
-public class JournalAction extends HttpServlet {
+public class DeleteJournalAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public JournalAction() {
+	public DeleteJournalAction() {
 		super();
 	}
 
@@ -41,11 +41,17 @@ public class JournalAction extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		JournalService js = new JournalServiceImpl();
-		if(js.create(request)){
-			response.sendRedirect(request.getContextPath()+"/student/journallist");
+		int status = js.delete(request);
+		switch(status){
+		case 0:
+			response.sendRedirect(request.getContextPath()+"/student/journallist?errormessage="+URLEncoder.encode("已经移至回收站！","UTF-8"));
 			return;
-		}else{
-			response.sendRedirect(request.getContextPath()+"/student/journaledit?errormessage="+URLEncoder.encode("创建失败，请重试！", "UTF-8"));
+		case 1:
+			response.sendRedirect(request.getContextPath()+"/student/journallist?errormessage="+URLEncoder.encode("删除成功!","UTF-8"));
+			return;
+		default:
+			response.sendRedirect(request.getContextPath()+"/student/journallist?errormessage="+URLEncoder.encode("删除失败！","UTF-8"));
+			return;
 		}
 	}
 

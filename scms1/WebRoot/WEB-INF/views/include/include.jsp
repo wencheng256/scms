@@ -91,4 +91,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 });
             }
         }
+        function showMsg(msg, obj) {
+            jBox.tip(msg);
+            $("#" + obj).focus();
+        }
     </script>

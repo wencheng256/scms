@@ -1,13 +1,16 @@
 package com.wencheng.web.ui;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wencheng.service.JournalService;
 import com.wencheng.service.JournalTypeService;
+import com.wencheng.service.impl.JournalServiceImpl;
 import com.wencheng.service.impl.JournalTypeServiceImpl;
 
 public class JournalUI extends HttpServlet {
@@ -40,6 +43,10 @@ public class JournalUI extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		JournalTypeService jt = new JournalTypeServiceImpl();
+		String message = request.getParameter("errormessage");
+		if(message != null){
+			request.setAttribute("message", URLDecoder.decode(message,"UTF-8"));
+		}
 		request.setAttribute("type", jt.list());
 		//dispatcher
 		request.getRequestDispatcher("/WEB-INF/views/upper/student/projectjournal.jsp").forward(request, response);

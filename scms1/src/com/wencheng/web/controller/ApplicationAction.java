@@ -8,15 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.service.JournalService;
-import com.wencheng.service.impl.JournalServiceImpl;
+import com.wencheng.service.impl.ApplicationServiceImpl;
 
-public class JournalAction extends HttpServlet {
+public class ApplicationAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public JournalAction() {
+	public ApplicationAction() {
 		super();
 	}
 
@@ -40,12 +39,13 @@ public class JournalAction extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		JournalService js = new JournalServiceImpl();
-		if(js.create(request)){
-			response.sendRedirect(request.getContextPath()+"/student/journallist");
+		ApplicationServiceImpl as = new ApplicationServiceImpl();
+		if(as.create(request)){
+			response.sendRedirect(request.getContextPath()+"/student/applicationshow");
 			return;
 		}else{
-			response.sendRedirect(request.getContextPath()+"/student/journaledit?errormessage="+URLEncoder.encode("创建失败，请重试！", "UTF-8"));
+			response.sendRedirect(request.getContextPath()+"/student/application?errormessage="+URLEncoder.encode("更新或创建失败，请重试！","UTF-8"));
+			return;
 		}
 	}
 

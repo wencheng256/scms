@@ -1,22 +1,28 @@
 package com.wencheng.web.controller;
 
 import java.io.IOException;
-import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.wencheng.domain.Journal;
 import com.wencheng.service.JournalService;
 import com.wencheng.service.impl.JournalServiceImpl;
 
-public class JournalAction extends HttpServlet {
+public class JournalListAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public JournalAction() {
+	public JournalListAction() {
 		super();
 	}
 
@@ -40,13 +46,27 @@ public class JournalAction extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setHeader("Content-Type", "application/json");
+		
+		SimpleDateFormat sf = new SimpleDateFormat("YY-MM-dd");
+		
 		JournalService js = new JournalServiceImpl();
-		if(js.create(request)){
-			response.sendRedirect(request.getContextPath()+"/student/journallist");
-			return;
-		}else{
-			response.sendRedirect(request.getContextPath()+"/student/journaledit?errormessage="+URLEncoder.encode("创建失败，请重试！", "UTF-8"));
+		List<Journal> list = js.list(request);
+		JSONArray ja = new JSONArray();
+		Iterator<Journal> it = list.iterator();
+		while(it.hasNext()){
+			Journal jou = it.next();
+			jou.setProject(null);
+			JSONObject jo1 = new JSONObject();
+			jo1.put("title", jou.getTitle());
+			jo1.put("type", jou.getType().getName());
+			jo1.put("id", jou.getId());
+			jo1.put("status", jou.getStatus());
+			jo1.put("time", sf.format(jou.getTime()));
+			ja.add(jo1);
 		}
+		
+		response.getWriter().print(ja.toString());
 	}
 
 	/**

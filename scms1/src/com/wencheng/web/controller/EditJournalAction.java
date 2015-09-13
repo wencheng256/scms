@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.wencheng.service.JournalService;
 import com.wencheng.service.impl.JournalServiceImpl;
 
-public class JournalAction extends HttpServlet {
+public class EditJournalAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public JournalAction() {
+	public EditJournalAction() {
 		super();
 	}
 
@@ -41,11 +41,11 @@ public class JournalAction extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		JournalService js = new JournalServiceImpl();
-		if(js.create(request)){
+		if(js.update(request)){
 			response.sendRedirect(request.getContextPath()+"/student/journallist");
 			return;
 		}else{
-			response.sendRedirect(request.getContextPath()+"/student/journaledit?errormessage="+URLEncoder.encode("创建失败，请重试！", "UTF-8"));
+			response.sendRedirect(request.getContextPath()+"/student/journaledit?errormessage="+URLEncoder.encode("更新错误", "UTF-8"));
 		}
 	}
 

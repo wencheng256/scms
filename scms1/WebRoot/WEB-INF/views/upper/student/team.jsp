@@ -126,9 +126,6 @@
     </div>
 
     <script type="text/javascript">
-    function returnIndex() {
-        window.location = "/Index.aspx";
-    }
     function showMsg(msg, obj) {
         jBox.tip(msg);
         $("#" + obj).focus();

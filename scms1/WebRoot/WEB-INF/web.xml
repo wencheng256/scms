@@ -123,6 +123,48 @@
     <servlet-name>JournalAction</servlet-name>
     <servlet-class>com.wencheng.web.controller.JournalAction</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JournalListAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.JournalListAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EditJournalAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.EditJournalAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteJournalAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.DeleteJournalAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ApplicationUI</servlet-name>
+    <servlet-class>com.wencheng.web.ui.ApplicationUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowApplicationUI</servlet-name>
+    <servlet-class>com.wencheng.web.controller.ShowApplicationUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ApplicationAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.ApplicationAction</servlet-class>
+  </servlet>
+
+
+
+
+
+
 
 
 
@@ -222,6 +264,30 @@
   <servlet-mapping>
     <servlet-name>JournalAction</servlet-name>
     <url-pattern>/student/journalaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JournalListAction</servlet-name>
+    <url-pattern>/student/getjournallist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditJournalAction</servlet-name>
+    <url-pattern>/student/editjournalaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteJournalAction</servlet-name>
+    <url-pattern>/student/deletejournal</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ApplicationUI</servlet-name>
+    <url-pattern>/student/application</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowApplicationUI</servlet-name>
+    <url-pattern>/student/showapplication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ApplicationAction</servlet-name>
+    <url-pattern>/student/applicationaction</url-pattern>
   </servlet-mapping>
     <filter>
         <filter-name>isLogin</filter-name>
