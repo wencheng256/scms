@@ -24,7 +24,7 @@
 
 </div>
 <div class="cztable">
-	<form action="${path }student/applicationaction">
+	<form action="${path }student/applicationaction" method="post">
 	
 	<input type="hidden" name="version"  value="${version}" />
 	<c:if test="${appid != null}">
@@ -33,59 +33,67 @@
     <table border="0" cellspacing="0" cellpadding="0" width="100%" >
         <tr>
             <td width="91" align="right">是否公开</td>
-            <td colspan="5">是<input type="radio" name="ispublic" value ="1" checked/> 否<input type="radio" name="ispublic" value="0"/></td>
+            <td colspan="5">是<input type="radio" name="ispublic" value ="1"
+             <c:if test="${app.ispublic}">
+             checked 
+             </c:if>
+             /> 否<input type="radio" name="ispublic" value="0"
+            <c:if test="${!app.ispublic}">
+             checked 
+             </c:if>
+             /></td>
         </tr>
         <tr>
             <td width="91" align="right">研究现状</td>
-            <td colspan="5"><textarea name="now" id="now" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="now" id="now" cols="100" rows="5">${app.now}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">需要解决的问题和创新点</td>
-            <td colspan="5"><textarea name="problems" id="problems" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="problems" id="problems" cols="100" rows="5">${app.problems}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">项目研究可行性分析</td>
-            <td colspan="5"><textarea name="could" id="could" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="could" id="could" cols="100" rows="5">${app.could}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">参考文献</td>
-            <td colspan="5"><textarea name="reference" id="reference" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="reference" id="reference" cols="100" rows="5">${app.reference}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">研究内容</td>
-            <td colspan="5"><textarea name="content" id="content" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="content" id="content" cols="100" rows="5">${app.content}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">研究方法</td>
-            <td colspan="5"><textarea name="method" id="method" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="method" id="method" cols="100" rows="5">${app.method}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">研究进度及安排</td>
-            <td colspan="5"><textarea name="process" id="process" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="process" id="process" cols="100" rows="5">${app.process}</textarea></td>
         </tr>
          <tr>
             <td width="91" align="right">预期研究成果及其展现形式</td>
-            <td colspan="5"><textarea name="comefrom" id="comefrom" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="comefrom" id="comefrom" cols="100" rows="5">${app.comefrom}</textarea></td>
         </tr>
          <tr>
             <td width="91" align="right">所需仪器设备</td>
-            <td colspan="5"><textarea name="equipment" id="equipment" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="equipment" id="equipment" cols="100" rows="5">${app.equipment}</textarea></td>
         </tr>
          <tr>
             <td width="91" align="right">项目来源</td>
-            <td colspan="5"><textarea name="comefrom" id="comefrom" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="comefrom" id="comefrom" cols="100" rows="5">${app.comefrom}</textarea></td>
         </tr>
          <tr>
             <td width="91" align="right">项目感想</td>
-            <td colspan="5"><textarea name="thought" id="thought" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="thought" id="thought" cols="100" rows="5">${app.thought}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">项目概要</td>
-            <td colspan="5"><textarea name="about" id="about" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="about" id="about" cols="100" rows="5">${app.about}</textarea></td>
         </tr>
         <tr>
             <td width="91" align="right">研究基础</td>
-            <td colspan="5"><textarea name="base" id="base" cols="100" rows="5"></textarea></td>
+            <td colspan="5"><textarea name="base" id="base" cols="100" rows="5">${app.base}</textarea></td>
         </tr>
         <tr>
             <td colspan="5" align="center" valign="middle">

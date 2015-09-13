@@ -1,5 +1,6 @@
 package com.wencheng.dao.impl;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -24,5 +25,15 @@ public class ApplicationDaoImpl implements ApplicationDao {
 		}
 		return true;
 	}
-
+	@Override
+	public ApplicationReport find(int project) {
+		Session session = HibernateUtil.getSession();
+		try{
+			String queryString = "select distinct app from ApplicationReport app where app.project.id = :id";
+			Query query = session.createQuery(queryString).setInteger("id",project);
+			return (ApplicationReport) query.uniqueResult();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+	}
 }

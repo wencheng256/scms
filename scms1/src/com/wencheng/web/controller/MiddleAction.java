@@ -1,24 +1,22 @@
-package com.wencheng.web.ui;
+package com.wencheng.web.controller;
 
 import java.io.IOException;
-import java.util.Date;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wencheng.domain.ApplicationReport;
-import com.wencheng.domain.Project;
-import com.wencheng.service.ApplicationService;
-import com.wencheng.service.impl.ApplicationServiceImpl;
+import com.wencheng.service.MiddleService;
+import com.wencheng.service.impl.MiddleServiceImpl;
 
-public class ApplicationUI extends HttpServlet {
+public class MiddleAction extends HttpServlet {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public ApplicationUI() {
+	public MiddleAction() {
 		super();
 	}
 
@@ -42,16 +40,14 @@ public class ApplicationUI extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Project pro = (Project) request.getSession().getAttribute("project");
-		
-		ApplicationService as = new ApplicationServiceImpl();
-		ApplicationReport application = as.find(request);
-		if(application != null){
-			request.setAttribute("appid", application.getId());
-			request.setAttribute("app",application);
+		MiddleService ms = new MiddleServiceImpl();
+		if(ms.create(request)){
+			response.sendRedirect(request.getContextPath()+"/student/middleshow");
+			return;
+		}else{
+			response.sendRedirect(request.getContextPath()+"/student/middle?errormessage="+URLEncoder.encode("创建或更新失败","UTF-8"));
+			return;
 		}
-		request.setAttribute("version", new Date());
-		request.getRequestDispatcher("/WEB-INF/views/upper/student/application.jsp").forward(request, response);
 	}
 
 	/**

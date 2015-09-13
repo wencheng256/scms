@@ -26,10 +26,10 @@
 <div class="cztable">
 	<c:choose>
 		<c:when test="${jou == null}">
-			<form action="${path }student/journalaction">
+			<form action="${path }student/journalaction" method="post">
 		</c:when>
 		<c:otherwise>
-			<form action="${path }student/editjournalaction">
+			<form action="${path }student/editjournalaction" method="post">
 		</c:otherwise>
 	</c:choose>
 	<input type="hidden" name="version"  value="${version}" />

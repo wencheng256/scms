@@ -26,10 +26,10 @@
 <div class="cztable">
 	<c:choose>
 		<c:when test="${jou == null}">
-			<form action="${path }student/journalaction">
+			<form action="${path }student/journalaction" method="post">
 		</c:when>
 		<c:otherwise>
-			<form action="${path }student/editjournalaction">
+			<form action="${path }student/editjournalaction" method="post">
 		</c:otherwise>
 	</c:choose>
 	<input type="hidden" name="version"  value="${version}" />
@@ -38,64 +38,71 @@
    	</c:if>
     <table border="0" cellspacing="0" cellpadding="0" width="100%" >
         <tr>
-            <td width="91" align="right">日志名称：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">是否公开：</td>
+            <td colspan="5">
+            <c:if test="${app.ispublic}">
+            	是
+            </c:if>
+            <c:if test="${!app.ispublic}">
+            	是
+            </c:if>
+            </td>
         </tr>
         <tr>
-            <td width="91" align="right">研究现状：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">研究现状：</td>
+            <td colspan="5">${app.now}</td>
         </tr>
         <tr>
-            <td width="91" align="right">需要解决的问题和创新点：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">需要解决的问题和创新点：</td>
+            <td colspan="5">${app.problems}</td>
         </tr>
         <tr>
-            <td width="91" align="right">项目研究可行性分析：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">项目研究可行性分析：</td>
+            <td colspan="5">${app.could}</td>
         </tr>
         <tr>
-            <td width="91" align="right">参考文献：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">参考文献：</td>
+            <td colspan="5">${app.reference}</td>
         </tr>
         <tr>
-            <td width="91" align="right">研究内容：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">研究内容：</td>
+            <td colspan="5">${app.content}</td>
         </tr>
         <tr>
-            <td width="91" align="right">研究方法：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">研究方法：</td>
+            <td colspan="5">${app.method}</td>
         </tr>
         <tr>
-            <td width="91" align="right">研究进度及安排：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">研究进度及安排：</td>
+            <td colspan="5">${app.process}</td>
         </tr>
          <tr>
-            <td width="91" align="right">预期研究成果及其展现形式：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">预期研究成果及其展现形式：</td>
+            <td colspan="5">${app.comefrom}</td>
         </tr>
          <tr>
-            <td width="91" align="right">所需仪器设备：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">所需仪器设备：</td>
+            <td colspan="5">${app.equipment}</td>
         </tr>
          <tr>
-            <td width="91" align="right">项目来源：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">项目来源：</td>
+            <td colspan="5">${app.comefrom}</td>
         </tr>
          <tr>
-            <td width="91" align="right">项目感想：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">项目感想：</td>
+            <td colspan="5">${app.thought}</td>
         </tr>
         <tr>
-            <td width="91" align="right">项目概要：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">项目概要：</td>
+            <td colspan="5">${app.about}</td>
         </tr>
         <tr>
-            <td width="91" align="right">研究基础：</td>
-            <td colspan="5">${app}</td>
+            <td width="160" align="right">研究基础：</td>
+            <td colspan="5">${app.base}</td>
         </tr>
         <tr>
             <td colspan="5" align="center" valign="middle">
-                <input type="button" name="button2" id="button2" value="点击修改" class="input2" onclick="onSaveProblem()" />
+                <a href="${path }student/application"><input type="button" name="button2" id="button2" value="点击修改" class="input2" onclick="onSaveProblem()" /></a>
         	</td>
        	</tr>
     </table>

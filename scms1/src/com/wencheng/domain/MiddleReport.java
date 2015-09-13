@@ -12,7 +12,7 @@ public class MiddleReport {
 	
 	private int id;
 	private boolean isSubmit;
-	private boolean isPublic;
+	private boolean public1;
 	private String result;
 	private String thought;
 	private String feeused;
@@ -44,11 +44,11 @@ public class MiddleReport {
 	 * 是否公开
 	 * @return
 	 */
-	public boolean isPublic() {
-		return isPublic;
+	public boolean getPublic1() {
+		return public1;
 	}
-	public void setPublic(boolean isPublic) {
-		this.isPublic = isPublic;
+	public void setPublic1(boolean public1) {
+		this.public1 = public1;
 	}
 	/**
 	 * 研究成果
