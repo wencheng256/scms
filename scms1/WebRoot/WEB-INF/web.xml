@@ -183,6 +183,118 @@
     <servlet-name>MiddleShowUI</servlet-name>
     <servlet-class>com.wencheng.web.ui.MiddleShowUI</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EndEditUI</servlet-name>
+    <servlet-class>com.wencheng.web.ui.EndEditUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EndAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.EndAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EndShowUI</servlet-name>
+    <servlet-class>com.wencheng.web.ui.EndShowUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProjectListUI</servlet-name>
+    <servlet-class>com.wencheng.web.ui.ProjectListUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeacherRegister</servlet-name>
+    <servlet-class>com.wencheng.web.ui.TeacherRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeacherRegisterAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.TeacherRegisterAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckTeacherUsername</servlet-name>
+    <servlet-class>com.wencheng.web.controller.CheckTeacherUsername</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SchoolTeacherList</servlet-name>
+    <servlet-class>com.wencheng.web.controller.SchoolTeacherList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddTeacher</servlet-name>
+    <servlet-class>com.wencheng.web.controller.AddTeacher</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JournalPage</servlet-name>
+    <servlet-class>com.wencheng.web.ui.JournalPage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OtherProject</servlet-name>
+    <servlet-class>com.wencheng.web.ui.OtherProject</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OtherApplication</servlet-name>
+    <servlet-class>com.wencheng.web.ui.OtherApplication</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OtherMiddle</servlet-name>
+    <servlet-class>com.wencheng.web.ui.OtherMiddle</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OtherEnd</servlet-name>
+    <servlet-class>com.wencheng.web.ui.OtherEnd</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OtherJournaLlist</servlet-name>
+    <servlet-class>com.wencheng.web.ui.OtherJournaLlist</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OtherJournalPage</servlet-name>
+    <servlet-class>com.wencheng.web.ui.OtherJournalPage</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -332,6 +444,70 @@
   <servlet-mapping>
     <servlet-name>MiddleShowUI</servlet-name>
     <url-pattern>/student/middleshow</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EndEditUI</servlet-name>
+    <url-pattern>/student/end</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EndAction</servlet-name>
+    <url-pattern>/student/endaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EndShowUI</servlet-name>
+    <url-pattern>/student/endshow</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProjectListUI</servlet-name>
+    <url-pattern>/student/projectlist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeacherRegister</servlet-name>
+    <url-pattern>/teacher/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeacherRegisterAction</servlet-name>
+    <url-pattern>/teacher/teacherregisteraction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckTeacherUsername</servlet-name>
+    <url-pattern>/student/checkusername</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SchoolTeacherList</servlet-name>
+    <url-pattern>/student/getteacherlist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddTeacher</servlet-name>
+    <url-pattern>/student/addteacher</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JournalPage</servlet-name>
+    <url-pattern>/student/journalpage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OtherProject</servlet-name>
+    <url-pattern>/student/otherproject</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OtherApplication</servlet-name>
+    <url-pattern>/student/otherapplication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OtherMiddle</servlet-name>
+    <url-pattern>/student/othermiddle</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OtherEnd</servlet-name>
+    <url-pattern>/student/otherend</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OtherJournaLlist</servlet-name>
+    <url-pattern>/student/otherjournallist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OtherJournalPage</servlet-name>
+    <url-pattern>/student/otherjournalpage</url-pattern>
   </servlet-mapping>
     <filter>
         <filter-name>isLogin</filter-name>

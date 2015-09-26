@@ -1,11 +1,16 @@
 package com.wencheng.web.ui;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.wencheng.domain.School;
+import com.wencheng.service.impl.SchoolServiceImpl;
+import com.wencheng.service.impl.TeacherServiceImpl;
 
 public class Teacher extends HttpServlet {
 
@@ -36,7 +41,13 @@ public class Teacher extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		TeacherServiceImpl ts = new TeacherServiceImpl();
+		ts.listSchool(request);
+		SchoolServiceImpl ss = new SchoolServiceImpl();
+		List<School> schools = ss.list();
+		request.setAttribute("schools",schools);
+		Object[] teacher = ts.listProject(request);
+		request.setAttribute("teacher", teacher);
 		//dispatcher
 		request.getRequestDispatcher("/WEB-INF/views/upper/student/teacher.jsp").forward(request, response);
 	}

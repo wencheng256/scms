@@ -101,7 +101,29 @@ public class JournalDaoImpl extends ObjectDaoImpl<Journal> implements
 			HibernateUtil.closeSession();
 		}
 	}
-	
-	
 
+	@Override
+	public List<Journal> listOther(int project) {
+		Session session = HibernateUtil.getSession();
+		try{
+			String queryString = "SELECT distinct j from Journal j left join fetch j.type left join fetch j.project where j.project.id = :id and j.status = 2";
+			Query query = session.createQuery(queryString);
+			return query.setInteger("id", project).list();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+	}
+
+	@Override
+	public Journal findOther(int id) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			String queryString = "SELECT distinct j from Journal j left join fetch j.editor left join fetch j.type where j.id = :id and j.status = 2";
+			Query query = session.createQuery(queryString);
+			return (Journal) query.setInteger("id", id).uniqueResult();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+	}
 }

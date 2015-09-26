@@ -45,9 +45,9 @@ html{height:100%;overflow:hidden;background:#2f7fb2 url(resources/styles/images/
     </div>
   </div>
 </div>
-<c:if test="${errormessage != null}">
+<c:if test="${message != null}">
 <script>
-	alert("${errormessage}");
+	alert("${message}");
 </script>
 </c:if>
 <script>

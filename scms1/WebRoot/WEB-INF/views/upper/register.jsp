@@ -134,6 +134,11 @@
 		 },"json");
 	  }
   </script>
+  <c:if test="${message != null}">
+  	<script>
+  	alert("${message}");
+  	</script>
+  </c:if>
 </body>
 </html>
 

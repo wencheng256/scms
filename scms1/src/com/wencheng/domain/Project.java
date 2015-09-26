@@ -24,7 +24,7 @@ public class Project {
 	private String number;								//项目编号
 	private Date startingTime;							//开始时间
 	private ProjectLevel level;							//项目分类
-	private int status;									//项目状态 0.超前 1.顺利 2.延迟 3.中断 4.终止
+	private int status = 1;									//项目状态 0.超前 1.顺利 2.延迟 3.中断 4.终止
 	private School school;								//学院
 	private List<Student> member = new LinkedList<Student>();//成员
 	private Teacher teacher;							//指导教师
@@ -38,6 +38,7 @@ public class Project {
 	private boolean important;
 	private List<Error> errors = new LinkedList<Error>(); //警告处分
 	private List<Fee> fees = new LinkedList<Fee>();
+	private int grade;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -90,7 +91,7 @@ public class Project {
 	public void setSchool(School school) {
 		this.school = school;
 	}
-	@OneToMany(mappedBy="school")
+	@OneToMany(mappedBy="project")
 	public List<Student> getMember() {
 		return member;
 	}
@@ -172,5 +173,11 @@ public class Project {
 	}
 	public void setImportant(boolean important) {
 		this.important = important;
+	}
+	public int getGrade() {
+		return grade;
+	}
+	public void setGrade(int grade) {
+		this.grade = grade;
 	}
 }

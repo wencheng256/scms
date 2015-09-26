@@ -11,7 +11,6 @@ import javax.persistence.OneToOne;
 public class EndReport {
 	
 	private int id;
-	private boolean submit;
 	private boolean ispublic;
 	private String status;
 	private String result;
@@ -26,12 +25,6 @@ public class EndReport {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public boolean isSubmit() {
-		return submit;
-	}
-	public void setSubmit(boolean submit) {
-		this.submit = submit;
 	}
 	public boolean isIspublic() {
 		return ispublic;

@@ -8,5 +8,6 @@ public interface ApplicationService {
 	
 	public boolean create(HttpServletRequest request);
 	public ApplicationReport find(HttpServletRequest request);
+	public ApplicationReport findother(HttpServletRequest request);
 
 }

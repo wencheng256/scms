@@ -1,6 +1,7 @@
 package com.wencheng.web.ui;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.Date;
 import java.util.List;
 
@@ -50,6 +51,10 @@ public class Register extends HttpServlet {
 		ProjectLevelService ps = new ProjectLevelServiceImpl();
 		List<School> school = ss.list();
 		List<ProjectLevel> level = ps.list();
+		String message = request.getParameter("errormessage");
+		if(message != null){
+			request.setAttribute("message", URLDecoder.decode(message, "utf-8"));
+		}
 		request.setAttribute("version",new Date().toString());
 		request.setAttribute("school", school);
 		request.setAttribute("level", level);

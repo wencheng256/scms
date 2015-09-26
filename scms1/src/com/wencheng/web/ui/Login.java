@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		//dispatcher
 		if(request.getParameter("errormessage") != null){
-			request.setAttribute("errormessage",URLDecoder.decode(request.getParameter("errormessage"), "UTF-8"));
+			request.setAttribute("message",URLDecoder.decode(request.getParameter("errormessage"), "UTF-8"));
 		}
 		request.getRequestDispatcher("/WEB-INF/views/upper/login.jsp").forward(request, response);
 	}

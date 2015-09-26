@@ -67,4 +67,20 @@ public class JournalServiceImpl implements JournalService {
 		}
 		return dao.delete(Integer.parseInt(id));
 	}
+	@Override
+	public List<Journal> listOther(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		if(id == null){
+			return null;
+		}
+		return dao.listOther(Integer.parseInt(id));
+	}
+	@Override
+	public Journal findOther(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		String id = request.getParameter("id");
+		if(id == null)
+			return null;
+		return dao.findOther(Integer.parseInt(id));
+	}
 }

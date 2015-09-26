@@ -34,4 +34,13 @@ public class ApplicationServiceImpl implements ApplicationService {
 		Project pro = (Project) request.getSession().getAttribute("project");
 		return dao.find(pro.getId());
 	}
+
+	@Override
+	public ApplicationReport findother(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		String id = request.getParameter("id");
+		if(id == null)
+			return null;
+		return dao.find(Integer.parseInt(id));
+	}
 }

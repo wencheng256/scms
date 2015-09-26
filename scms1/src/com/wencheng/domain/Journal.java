@@ -1,7 +1,9 @@
 package com.wencheng.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
 
 @Entity
 public class Journal {
@@ -22,6 +26,7 @@ public class Journal {
 	private Project project;
 	private Date time=new Date();
 	private String title;
+	private SimpleDateFormat sm = new SimpleDateFormat("YYYY-mm-dd");
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -53,6 +58,9 @@ public class Journal {
 	public void setType(Type type) {
 		this.type = type;
 	}
+	
+	@Column(length=3000)
+	@org.hibernate.annotations.Type(type="text")
 	public String getContent() {
 		return content;
 	}
@@ -79,5 +87,9 @@ public class Journal {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	@Transient
+	public String getDate(){
+		return sm.format(time);
 	}
 }

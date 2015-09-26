@@ -37,59 +37,36 @@
             <th width="20%">邮箱</th>
             <th width="20%">学院</th>
         </tr>
-	<c:forEach items="${students}" var="stu" varStatus="statu">
-        <tr style="height: 28px" class="tdbg" align="center">
-            <td align="center">${statu.index}</td>
-			<td align="center">${stu.name}</td>
-			<td align="center">${stu.number}</td>
-			<td align="center">${stu.phone}</td>
-            <td align="center">
-				<c:choose>
-					<c:when test="${stu.degree==1}">
-						本科
-					</c:when>
-					<c:otherwise>
-						硕士
-					</c:otherwise>
-				</c:choose>
-			</td>
-			<td align="center">${stu.school.name}</td>
-			<td align="center">${stu.email}</td>
-			<td align="center">
-				<c:if test="${stu.cap}">
-					√
-				</c:if>
-			</td>
-            <td align="center"><a href="${path}student/mkcaptain?id=${stu.id}">晋升</a></td>
-            <td align="center"><a onclick="delete1('${stu.id}','${stu.name}')">X</a></td>
+        <tr>
+            <td style="text-align:center;" width="20%">${teacher[0]}</td>
+            <td style="text-align:center;" width="20%">${teacher[1]}</td>
+            <td style="text-align:center;" width="20%">${teacher[2]}</td>
+            <td style="text-align:center;" width="20%">${teacher[3]}</td>
+            <td style="text-align:center;" width="20%">${teacher[4]}</td>
         </tr>
-	</c:forEach>
     </table>
 </div>
 
 <div class="cztable">
 <h2 class="mbx">项目管理 &gt; 指导教师(只能有一个指导教师，再次选择将更换指导教师)</h2>
-<form method="post" action="${path}student/teamaction">
+<form method="post" action="${path}student/addteacher">
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td width="15%" align="right"><div align="right">学院： </div></td>
-            <td>
-                <select id="school" name="schoolid">
+            <td >
+                <select id="school" name="schoolid" onchange="getteacher($('#school').val())">
                     <option value="Unselected">请选择</option>
-                    	<c:forEach items="${school}" var="s">
-                   	 		<option value="${s.id}">${s.name}</option>
+                    	<c:forEach items="${schools}" var="s">
+                   	 		<option value="${s.id}" >${s.name}</option>
                    		</c:forEach>
                 </select>
             </td>
         </tr>
         <tr>
             <td width="15%" align="right"><div align="right">老师： </div></td>
-            <td>
-                <select id="school" name="schoolid">
-                    <option value="Unselected">请选择</option>
-                    	<c:forEach items="${school}" var="s">
-                   	 		<option value="${s.id}">${s.name}</option>
-                   		</c:forEach>
+            <td id="teacherschool">
+                <select id="school" name="teacherid">
+                    <option value="Unselected">请选择学院</option>
                 </select>
             </td>
         </tr>
@@ -113,40 +90,11 @@
     </div>
 
     <script type="text/javascript">
-    function returnIndex() {
-        window.location = "/Index.aspx";
-    }
     function showMsg(msg, obj) {
         jBox.tip(msg);
         $("#" + obj).focus();
     }
     function saveClick(studentId) {
-        var name = $("#name").val();   //消息标题
-        if (name == "") {
-            showMsg("请您输入成员姓名！", "name");
-            return false;
-        }
-        var email = $("#email").val();   //消息标题
-        if (email == "") {
-            showMsg("请您输入成员邮箱！", "email");
-            return false;
-        }
-        var school = $("#schoolid").val();   //消息标题
-        if (school == "Unselected") {
-            showMsg("请您选择成员的学院", "school");
-            return false;
-        }
-        var number = $("#number").val();   //消息标题
-        if (number == "") {
-            showMsg("请您输入成员学号", "number");
-            return false;
-        }
-        var phone = $("#phone").val();   //消息标题
-        if (phone == "") {
-            showMsg("请您输入成员的电话号码", "phone");
-            return false;
-        }
-
         document.forms[0].submit();
     }
     function delete1(id,name){
@@ -154,6 +102,28 @@
     	if(conf){
     		window.location = "${path}student/deleteteam?id="+id;
     	}
+    }
+    function getteacher(school){
+		if(school == "Unselected"){
+			return;
+		}
+    	console.log(document.forms[0].schoolid.value);
+    	var list = "<select id=\"school\" name=\"teacherid\">";
+		$.post("${path}student/getteacherlist",{'school':school},function(data){
+			if(data.result){
+				var resultlist = data.value;
+				for(var i = 0; i<resultlist.length; i++){
+					if(resultlist[i][2].length>5){
+						resultlist[i][2] = resultlist[i][2].slice(0,5)+"...";
+					}
+					list+="<option value=\""+resultlist[i][0]+"\">"+resultlist[i][1]+"("+resultlist[i][2]+")</option>";
+				}
+				list += "</select>";
+				console.log(resultlist);
+				$("#teacherschool").html(list);
+			}
+		},"json");
+    	//document.form[schoolid].innerHTML=list;
     }
 </script>
 <c:if test="${errormessage != null}">

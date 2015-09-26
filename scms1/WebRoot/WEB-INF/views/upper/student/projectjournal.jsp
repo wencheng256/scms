@@ -16,9 +16,9 @@
         <div class="rightbox">
                 
     <h2 class="mbx">
-        学习中心 &gt; <a href="#">资料中心</a></h2>
+        日志管理 &gt; <a href="#">日志列表</a></h2>
     <div class="feilei">
-        <a href="#"><strong>资料中心</strong></a></div>
+        <a href="#"><strong>日志列表</strong></a>（<a href="${path}student/journaledit"><strong>创建日志</strong></a>）</div>
     <div class="fllist">
         <ul>
             <li><strong>类型：</strong><a href="#" id="cAll" onclick="show(list)">全部</a>
@@ -91,7 +91,7 @@
     			var obj1 = list[i];
     			var img = "status"+obj1.status+".png";
     			if(obj1.status < 3 ){
-    				$("#table1").append("<tr><td><img src='${path}images/FileIco/"+img+"' /></td><td class=\"xxleft\">"+obj1.title+"</td><td>"+obj1.type+"</td><td>"+obj1.time+"</td><td><a href=\"${path}student/journaledit?id="+obj1.id+"\">√</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"${path}student/deletejournal?id="+obj1.id+"\">X</a></td></tr>");
+    				$("#table1").append("<tr><td><img src='${path}images/FileIco/"+img+"' /></td><td class=\"xxleft\"><a href=\"${path}student/journalpage?id="+obj1.id+"\">"+obj1.title+"</a></td><td>"+obj1.type+"</td><td>"+obj1.time+"</td><td><a href=\"${path}student/journaledit?id="+obj1.id+"\">√</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"${path}student/deletejournal?id="+obj1.id+"\">X</a></td></tr>");
     			}
     		}
     	}
@@ -102,7 +102,7 @@
     			var obj1 = list[i];
     			var img = "status"+obj1.status+".png";
     			if(obj1.type == name && obj1.status < 3){
-    				$("#table1").append("<tr><td><img src='${path}images/FileIco/"+img+"' /></td><td class=\"xxleft\">"+obj1.title+"</td><td>"+obj1.type+"</td><td>"+obj1.time+"</td><td><a href=\"${path}student/journaledit?id="+obj1.id+"\">√</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"${path}student/deletejournal?id="+obj1.id+"\">X</a></td></tr>");
+    				$("#table1").append("<tr><td><img src='${path}images/FileIco/"+img+"' /></td><td class=\"xxleft\"><a href=\"${path}student/journalpage?id="+obj1.id+"\">"+obj1.title+"</a></td><td>"+obj1.type+"</td><td>"+obj1.time+"</td><td><a href=\"${path}student/journaledit?id="+obj1.id+"\">√</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"${path}student/deletejournal?id="+obj1.id+"\">X</a></td></tr>");
     			}
     		}
     	}
@@ -113,7 +113,7 @@
     			var obj1 = list[i];
     			var img = "status"+obj1.status+".png";
     			if(obj1.status == status){
-    				$("#table1").append("<tr><td><img src='${path}images/FileIco/"+img+"' /></td><td class=\"xxleft\">"+obj1.title+"</td><td>"+obj1.type+"</td><td>"+obj1.time+"</td><td><a href=\"${path}student/journaledit?id="+obj1.id+"\">√</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"${path}student/deletejournal?id="+obj1.id+"\">X</a></td></tr>");
+    				$("#table1").append("<tr><td><img src='${path}images/FileIco/"+img+"' /></td><td class=\"xxleft\"><a href=\"${path}student/journalpage?id="+obj1.id+"\">"+obj1.title+"</a></td><td>"+obj1.type+"</td><td>"+obj1.time+"</td><td><a href=\"${path}student/journaledit?id="+obj1.id+"\">√</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"${path}student/deletejournal?id="+obj1.id+"\">X</a></td></tr>");
     			}
     		}
     	}

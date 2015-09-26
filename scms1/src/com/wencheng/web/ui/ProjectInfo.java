@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wencheng.domain.Project;
+import com.wencheng.service.ProjectService;
+import com.wencheng.service.impl.ProjectServiceImpl;
+
 public class ProjectInfo extends HttpServlet {
 
 	/**
@@ -36,7 +40,9 @@ public class ProjectInfo extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		ProjectService ps = new ProjectServiceImpl();
+		Project pro = ps.findProject(request);
+		request.setAttribute("project", pro);
 		//dispatcher
 		request.getRequestDispatcher("/WEB-INF/views/upper/student/info.jsp").forward(request, response);
 	}

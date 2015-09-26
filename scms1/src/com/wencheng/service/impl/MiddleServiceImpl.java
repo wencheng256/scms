@@ -33,4 +33,11 @@ public class MiddleServiceImpl implements MiddleService{
 		Project pro = (Project) request.getSession().getAttribute("project");
 		return dao.find(pro.getId());
 	}
+	@Override
+	public MiddleReport findother(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		if(id == null)
+			return null;
+		return dao.find(Integer.parseInt(id));
+	}
 }

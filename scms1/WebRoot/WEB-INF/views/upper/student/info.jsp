@@ -30,28 +30,30 @@
 <div class="cztable">
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
-            <td align="right" width="80">姓名：</td>
-            <td>邹智&nbsp;</td>
-            <td align="right" width="90">身份证号码：</td>
-            <td>430181198612113330&nbsp;</td>
+            <td align="right" width="80">项目名称：</td>
+            <td>${project.name }</td>
+            <td align="right" width="90">项目编码：</td>
+            <td>${project.number }</td>
             
             <td rowspan="9"><div align="center"><img id="pic_face"  height="160" width="120" src="${path }images/Student/photo.jpg"/ style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
         </tr>
         <tr>
-            <td align="right">性别：</td>
-            <td>男&nbsp;</td>
-            <td align="right">考籍号：</td>
-            <td>910513201419&nbsp;</td>
+            <td align="right">学院：</td>
+            <td>${project.process }</td>
+            <td align="right">指导教师：</td>
+            <td>${project.teacher.name }</td>
         </tr>
         <tr>
-            <td align="right">报考类别：</td>
-            <td>自考&nbsp;</td>
-            <td align="right">报考学校：</td>
-            <td>湖南大学&nbsp;</td>
+            <td align="right">项目类型：</td>
+            <td>
+				${project.level.name}
+			</td>
+            <td align="right">项目进度：</td>
+            <td>${project.process }%</td>
         </tr>
         <tr>
-            <td align="right">报考专业：</td>
-            <td>经济法学&nbsp;</td>
+            <td align="right">项目学院：</td>
+            <td>${project.school.name}</td>
             <td align="right">原专业：</td>
             <td>&nbsp;</td>
         </tr>
@@ -60,37 +62,51 @@
             <td>专本同读&nbsp;</td>
             
             <td align="right">注册批次：</td>
-            <td>2013秋&nbsp;</td>
+            <td>${project.grade}</td>
         </tr>
         <tr>
-            <td align="right">报名时间：</td>
-            <td>2013-08-16&nbsp;</td>
+            <td align="right">注册时间：</td>
+            <td>${project.startingTime}</td>
             <td align="right">状态：</td>
-            <td>在读&nbsp;</td>
+            <td>
+				<c:choose>
+					<c:when test="${project.status == 0}">
+						超前
+					</c:when>
+					<c:when test="${project.status == 1}">
+						顺利
+					</c:when>
+					<c:when test="${project.status == 2}">
+						延迟
+					</c:when>
+					<c:when test="${project.status == 3}">
+						中断
+					</c:when>
+					<c:when test="${project.status == 4}">
+						终止
+					</c:when>				
+				</c:choose>
+			</td>
         </tr>
         
         <tr>
             <td colspan="4" align="left">联系方式（如联系方式有变动请及时修改，以便能及时联系到你。谢谢！）</td>
             
         </tr>
+        <c:forEach items="${project.member}" var="stu" varStatus="stus">
         <tr>
-            <td align="right">手机号码：</td>
-            <td>15111141999</td>
-            <td align="right">第二联系号码：</td>
-            <td></td>
-           
+            <td align="right">${stus.index+1}</td>
+            <td colspan="4" >
+            <c:if test="${stu.cap}">
+            	<font color="blue">
+            </c:if>
+            ${stu.name}
+            <c:if test="${stu.cap}">
+            	</font>
+            </c:if>
+            </td>
         </tr>
-        <tr>
-            <td align="right">QQ:</td>
-            <td></td>
-            <td align="right">电子邮箱：</td>
-            <td></td>
-            
-        </tr>
-        <tr>
-            <td align="right">联系地址：</td>
-            <td colspan="4"></td>
-        </tr>
+        </c:forEach>
         <tr align="center">
             <td colspan="5" height="40">
                 <div align="center">

@@ -8,5 +8,6 @@ public interface MiddleService {
 	
 	public boolean create(HttpServletRequest request);
 	public MiddleReport find(HttpServletRequest request);
+	public MiddleReport findother(HttpServletRequest request);
 
 }

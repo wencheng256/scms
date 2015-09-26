@@ -15,14 +15,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <div>
                             <a href="${path }student/projectinfo">项目信息</a></div>
                         <div>
-                            <a href="MyInfo/ClassInfo.aspx.html">成员管理</a>
+                            <a href="${path }student/team">成员管理</a>
                         </div>
                         <div>
-                            <a href="User/StudentInfor/Letter.aspx.html">指导教师</a></div>
+                            <a href="${path }student/teacher">指导教师</a></div>
                         <div>
-                            <a href="User/StudentInfor/systemMsge.aspx.html">经费申报</a></div>
-                        <div>
-                            <a href="MyInfo/Objection.aspx.html">我的异议</a></div>
+                            <a href="${path }student/fee">经费申报</a></div>
                     </div>
                     <div class="ta1">
                         <strong>日志管理</strong>
@@ -31,13 +29,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div class="cdlist">
                         <div>
-                            <a href="EducationCenter/Application.aspx.html">项目日志</a></div>
+                            <a href="${path }student/journallist">项目日志</a></div>
                         <div>
-                            <a href="EducationCenter/Score.aspx.html">申请报告</a></div>
+                            <a href="${path }student/applicationshow">申请报告</a></div>
                         <div>
-                            <a href="EducationCenter/Book.aspx.html">中期报告</a></div>
+                            <a href="${path }student/middleshow">中期报告</a></div>
                         <div>
-                            <a href="EducationCenter/Book.aspx.html">结题报告</a></div>
+                            <a href="${path }student/endshow">结题报告</a></div>
                     </div>
                     <div class="ta1">
                         <strong>院校新闻</strong><div class="leftbgbt2">
@@ -45,9 +43,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div class="cdlist">
                         <div>
-                            <a href="OnlineTeaching/StudentMaterial.aspx.html">学院新闻</a></div>
+                            <a href="${path }student/schoolnews">学院新闻</a></div>
                         <div>
-                            <a href="OnlineTeaching/StudentStudyRecordList.aspx.html">学校新闻</a></div>
+                            <a href="${path }student/universitynews">学校新闻</a></div>
                     </div>
 
                     <div class="ta1">
@@ -56,10 +54,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div class="cdlist">
                         <div>
-                            <a href="MyAccount/wdcw.aspx.html">其他项目</a></div>
+                            <a href="${path }student/projectlist">其他项目</a></div>
                     </div>
-<div class="ta1">
-                        <a href="http://www.csgb.net/login.aspx?userLoginName=2014&userName=邹智&professionId=F40C998A-D9AC-421F-99C9-C024C1DC53AD&flag=sm" target="_blank"><strong>留言</strong></a>
+					<div class="ta1">
+                        <a href="${path }student/message" target="_blank"><strong>留言</strong></a>
                         <div class="leftbgbt2">
                         </div>
                     </div>

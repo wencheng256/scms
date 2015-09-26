@@ -3,6 +3,7 @@ package com.wencheng.domain;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,7 @@ public class Teacher {
 	private String email;
 	private String phone;
 	private String identity;
+	private String username;
 	private String password;
 	private List<Project> projects = new LinkedList<Project>();
 	
@@ -77,5 +79,11 @@ public class Teacher {
 	public void setProjects(List<Project> projects) {
 		this.projects = projects;
 	}
-	
+	@Column(unique=true)
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 }
