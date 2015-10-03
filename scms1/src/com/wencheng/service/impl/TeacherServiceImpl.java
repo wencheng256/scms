@@ -27,6 +27,7 @@ public class TeacherServiceImpl implements TeacherService {
 		if(schoolid == null){
 			return false;
 		}
+		teacher.setPassword(WebUtils.MD5(teacher.getPassword()));
 		School school = odao.find(School.class, Integer.parseInt(schoolid));
 		teacher.setSchool(school);
 		return dao.create(teacher);
@@ -54,5 +55,46 @@ public class TeacherServiceImpl implements TeacherService {
 		// TODO Auto-generated method stub
 		Project pro = (Project) request.getSession().getAttribute("project");
 		return dao.listProject(pro.getId());
+	}
+	@Override
+	public boolean isLogin(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		String name = request.getParameter("username");
+		String password  = WebUtils.MD5(request.getParameter("password"));
+		Teacher teacher = dao.verified(name, password);
+		if(teacher != null){
+			request.getSession().setAttribute("teacher", teacher);
+			return true;
+		}
+		return false;
+	}
+	@Override
+	public Teacher find(int id) {
+		// TODO Auto-generated method stub
+		return dao.find(id);
+	}
+	@Override
+	public boolean update(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		if(WebUtils.isSubmit(request)){
+			return false;
+		}
+		String id = request.getParameter("teacherid");
+		if(id == null){
+			return false;
+		}
+		String schoolid = request.getParameter("schoolid");
+		if(schoolid == null){
+			return false;
+		}
+		School school = odao.find(School.class, Integer.parseInt(schoolid));
+		String newpass = request.getParameter("newpassword");
+		Teacher bean = dao.find(Integer.parseInt(id));
+		bean.setSchool(school);
+		if(!newpass.equals("#unmodified")){
+			bean.setPassword(WebUtils.MD5(newpass));
+		}
+		WebUtils.getBean(bean, request);
+		return dao.update(bean);
 	}
 }

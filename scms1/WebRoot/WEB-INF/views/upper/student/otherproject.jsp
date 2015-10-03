@@ -35,7 +35,7 @@
             <td align="right" width="90">项目编码：</td>
             <td>${project.number }</td>
             
-            <td rowspan="9"><div align="center"><img id="pic_face"  height="160" width="120" src="${path }images/Student/photo.jpg"/ style="padding:2px 2px 5px; border:1px #ddd solid;"></div>&nbsp;</td>
+            <td rowspan="7"><div align="center"><div id="main" style="height:300px;width:350px;"></div></div></td>
         </tr>
         <tr>
             <td align="right">学院：</td>
@@ -122,5 +122,99 @@
         </div>
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </div>
+    <script type="text/javascript">
+ function createRandomItemStyle() {
+	    return {
+	        normal: {
+	            color: 'rgb(' + [
+	                Math.round(Math.random() * 160),
+	                Math.round(Math.random() * 160),
+	                Math.round(Math.random() * 160)
+	            ].join(',') + ')'
+	        }
+	    };
+	}
+
+        // 路径配置
+        require.config({
+            paths: {
+            	echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/wordCloud' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                var option = {
+                	    title: {
+                	        text: '项目云',
+                	    },
+                	    tooltip: {
+                	        show: true
+                	    },
+                	    series: [{
+                	        name: '${project.name}',
+                	        type: 'wordCloud',
+                	        size: ['80%', '80%'],
+                	        textRotation : [0, 45, 90, -45],
+                	        textPadding: 0,
+                	        autoSize: {
+                	            enable: true,
+                	            minSize: 14
+                	        },
+                	        data: [
+                	            {
+                	                name: '${project.name}',
+                	                value: 10000,
+                	                itemStyle: {
+                	                    normal: {
+                	                        color: 'black'
+                	                    }
+                	                }
+                	            },
+                	            {
+                	                name: "教师：${project.teacher.name}",
+                	                value: 6181,
+                	                itemStyle: createRandomItemStyle()
+                	            },
+                	            {
+                	                name: "学院：${project.school.name}",
+                	                value: 4386,
+                	                itemStyle: createRandomItemStyle()
+                	            },
+                	            {
+                	            	name: "进度${project.process}%",
+                	                value: 4055,
+                	                itemStyle: createRandomItemStyle()
+                	            },
+                	            <c:forEach items="${project.member}" var="stu" varStatus="stus">
+	                	            {
+	                	                name: "成员：${stu.name}",
+	                	                value: 2244,
+	                	                itemStyle: createRandomItemStyle()
+	                	            },
+                	            </c:forEach>
+
+                  	            {
+                	                name: "编号：${project.number}",
+                	                value: 2467,
+                	                itemStyle: createRandomItemStyle()
+                	            }
+                	        ]
+                	    }]
+                	};
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+    </script>
 </body>
 </html>

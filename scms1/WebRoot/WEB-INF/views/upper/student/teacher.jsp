@@ -95,13 +95,11 @@
         $("#" + obj).focus();
     }
     function saveClick(studentId) {
-        document.forms[0].submit();
-    }
-    function delete1(id,name){
-    	var conf = confirm("确认要从团队中删除"+name+"吗?");
-    	if(conf){
-    		window.location = "${path}student/deleteteam?id="+id;
+    	if($("#school").val() == "Unselected"){
+    		showMsg( "请选择老师");
+    		return;
     	}
+        document.forms[0].submit();
     }
     function getteacher(school){
 		if(school == "Unselected"){

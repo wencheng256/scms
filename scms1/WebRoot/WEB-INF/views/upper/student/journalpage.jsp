@@ -23,7 +23,7 @@
     	<h1 style="text-align:center;font-size:42px;line-height:45px;height:50px;">${journal.title}</h1>
     	<div style="text-align:center;padding:5px;"><i>${journal.editor.name} 时间:${journal.time}</i></div>
     	<div style="text-align:center;padding:5px;"><i>类型:${journal.type.name}</i></div>
-		${journal.content}	
+		${journal.jcontent}	
     </div>
             </div>
         </div>

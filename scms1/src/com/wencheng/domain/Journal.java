@@ -21,7 +21,7 @@ public class Journal {
 	private int id;
 	private int status;					//0草稿 1私有 2公开 3回收站
 	private Student editor;
-	private String content;
+	private String jcontent;
 	private Type type;
 	private Project project;
 	private Date time=new Date();
@@ -59,13 +59,13 @@ public class Journal {
 		this.type = type;
 	}
 	
-	@Column(length=3000)
+	@Column(length=3000,name="content")
 	@org.hibernate.annotations.Type(type="text")
-	public String getContent() {
-		return content;
+	public String getJcontent() {
+		return jcontent;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setJcontent(String content) {
+		this.jcontent = content;
 	}
 	@ManyToOne
 	@JoinColumn(name="project")
@@ -80,7 +80,7 @@ public class Journal {
 		return time;
 	}
 	public void setTime(Date time) {
-		this.time = new Date();
+		this.time = time;
 	}
 	public String getTitle() {
 		return title;

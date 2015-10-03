@@ -43,7 +43,7 @@ public class JournalPage extends HttpServlet {
 		JournalService js = new JournalServiceImpl();
 		Journal journal = js.find(request);
 		if(journal == null){
-			response.sendRedirect(request.getContextPath()+"/error.jsp");
+			response.sendRedirect(request.getContextPath()+"/error");
 			return;
 		}
 		request.setAttribute("journal", journal);

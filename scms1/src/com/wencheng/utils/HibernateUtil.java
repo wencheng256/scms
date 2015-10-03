@@ -50,7 +50,6 @@ public class HibernateUtil {
      */
     public static Session getSession() throws HibernateException {
         Session session = (Session) threadLocal.get();
-
 		if (session == null || !session.isOpen()) {
 			if (sessionFactory == null) {
 				rebuildSessionFactory();
@@ -90,6 +89,9 @@ public class HibernateUtil {
         if (session != null) {
             session.close();
         }
+    }
+    public static Session getCurrentSession(){
+    	return getSessionFactory().getCurrentSession();
     }
 
 	/**

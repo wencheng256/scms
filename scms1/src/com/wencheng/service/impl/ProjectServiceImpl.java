@@ -15,8 +15,8 @@ import com.wencheng.dao.impl.ProjectDaoImpl;
 import com.wencheng.dao.impl.PropertiesDaoImpl;
 import com.wencheng.domain.Account;
 import com.wencheng.domain.Project;
+import com.wencheng.domain.Teacher;
 import com.wencheng.service.ProjectService;
-import com.wencheng.utils.PageUtils;
 import com.wencheng.utils.WebUtils;
 
 public class ProjectServiceImpl implements ProjectService{
@@ -125,9 +125,28 @@ public class ProjectServiceImpl implements ProjectService{
 	public Project findOther(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		String id = request.getParameter("id");
-		if(id == null){
+		if(id == null || id.equals("null")){
 			return null;
 		}
 		return dao.findProject(Integer.parseInt(id));
+	}
+
+	@Override
+	public List<Project> listTeacher(HttpServletRequest request,int start, int rows) {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		Teacher t = (Teacher) session.getAttribute("teacher");
+		String grade = prop.get("grade");
+		return dao.listTeacher(Integer.parseInt(grade),start,rows,t.getId());
+	}
+
+	@Override
+	public int getTeacherRows(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		String grade = prop.get("grade");
+		HttpSession session = request.getSession();
+		Teacher t = (Teacher) session.getAttribute("teacher");
+		long rows = dao.getTeacherRows(Integer.parseInt(grade), t.getId());
+		return (int)rows;
 	}
 }

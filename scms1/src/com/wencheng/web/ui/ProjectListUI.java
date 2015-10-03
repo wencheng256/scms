@@ -47,6 +47,7 @@ public class ProjectListUI extends HttpServlet {
 		
 		PageUtils pageUtils = new PageUtils(20);
 		if(page == null){
+			page = "1";
 			start = 0;
 		}else{
 			start = pageUtils.getStart(Integer.parseInt(page));
@@ -57,6 +58,7 @@ public class ProjectListUI extends HttpServlet {
 		
 		List<Project> list = ps.list(start,rows);
 		request.setAttribute("projects", list);
+		request.setAttribute("nowpage", Integer.parseInt(page));
 		request.setAttribute("pages", pagenum);
 		//dispatcher
 		request.getRequestDispatcher("/WEB-INF/views/upper/student/projectlist.jsp").forward(request, response);

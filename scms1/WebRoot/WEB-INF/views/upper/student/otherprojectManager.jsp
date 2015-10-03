@@ -7,5 +7,5 @@
     <li><a class="tab${tc}" onclick="" href="${path}student/othermiddle?id=${id}">中期审核</a></li>
     <li><a class="tab${td}" onclick="" href="${path}student/otherend?id=${id}">结题报告</a></li>
     <li><a class="tab${tc}" onclick="" href="${path}student/otherjournallist?id=${id}">日志列表</a></li>
-    <li><a class="tab${tc}" onclick="" href="${path}student/liuyan?id=${id}">留言</a></li>
+    <li><a class="tab${tc}" onclick="" href="${path}student/othermessage?id=${id}">留言</a></li>
 </ul>

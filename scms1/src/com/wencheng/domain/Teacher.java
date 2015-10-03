@@ -1,5 +1,6 @@
 package com.wencheng.domain;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,6 +17,9 @@ import com.wencheng.utils.WebUtils;
 @Entity
 public class Teacher {
 	
+	/**
+	 * 
+	 */
 	private int id;
 	private String name;
 	private School school;
@@ -70,7 +74,7 @@ public class Teacher {
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = WebUtils.MD5(password);
+		this.password = password;
 	}
 	@OneToMany(mappedBy="teacher")
 	public List<Project> getProjects() {

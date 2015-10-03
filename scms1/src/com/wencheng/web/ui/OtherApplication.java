@@ -1,3 +1,4 @@
+
 package com.wencheng.web.ui;
 
 import java.io.IOException;
@@ -46,7 +47,7 @@ public class OtherApplication extends HttpServlet {
 		request.setAttribute("app", ap);
 		String id = request.getParameter("id");
 		if(id == null){
-			response.sendRedirect(request.getContextPath()+"/error.jsp");
+			response.sendRedirect(request.getContextPath()+"/error");
 			return;
 		}
 		request.setAttribute("id", id);

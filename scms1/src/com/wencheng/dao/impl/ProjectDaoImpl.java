@@ -95,4 +95,26 @@ public class ProjectDaoImpl extends ObjectDaoImpl<Project> implements ProjectDao
 		}
 	}
 
+	@Override
+	public List<Project> listTeacher(int grade, int start, int rows,int teacher) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			return session.createCriteria(Project.class).add(Restrictions.eq("grade", grade)).createAlias("teacher","t",JoinType.LEFT_OUTER_JOIN).add(Restrictions.eq("t.id", teacher)).createCriteria("school",JoinType.LEFT_OUTER_JOIN).setFetchMode("school",FetchMode.JOIN).setFirstResult(start).setMaxResults(rows).list();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+	}
+
+	@Override
+	public long getTeacherRows(int grade, int teacher) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			return (Long) session.createCriteria(Project.class).createAlias("teacher", "t",JoinType.LEFT_OUTER_JOIN).add(Restrictions.eq("t.id", teacher)).add(Restrictions.eq("grade",grade)).setProjection(Projections.rowCount()).uniqueResult();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+	}
+
 }

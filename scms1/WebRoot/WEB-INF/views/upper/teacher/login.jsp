@@ -20,11 +20,11 @@ html{height:100%;overflow:hidden;background:#2f7fb2 url(resources/styles/images/
 <body>
 <div class="theCenterBox" style="">
   <div class="theLoginBox">
-    <div class="loginTxt">登录</div>
+    <div class="loginTxt">指导教师登录</div>
     <div class="theLoginArea" id="loginBox">
-      <form id="leftForm" action="${path }loginaction" method="post">
+      <form id="leftForm" action="${path }teacherloginaction" method="post">
         <p style="position: relative;">
-          <label for="LoginForm_email">邮箱：</label>
+          <label for="LoginForm_email">登陆账号：</label>
           <input placeholder="请输入您的登陆账号" name="username" id="LoginForm_email" type="text" maxlength="255" />
           <span>请输入您的账号</span> </p>
         <p style="position: relative;">

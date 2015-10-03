@@ -42,7 +42,7 @@ public class OtherEnd extends HttpServlet {
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		if(id == null){
-			response.sendRedirect(request.getContextPath()+"/error.jsp");
+			response.sendRedirect(request.getContextPath()+"/error");
 			return;
 		}
 		request.setAttribute("id", id);

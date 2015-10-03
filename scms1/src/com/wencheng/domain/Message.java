@@ -1,5 +1,6 @@
 package com.wencheng.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -10,15 +11,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 public class Message {
 	
 	private int id;
+	private String name;
 	private String content;
 	private Project fromProject;
 	private Project toProject;
-	private Date time;
+	private Date time = new Date();
+	private SimpleDateFormat sm = new SimpleDateFormat("YY-MM-dd/hh:mm");
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -57,5 +61,14 @@ public class Message {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	@Transient
+	public String getDate(){
+		return sm.format(getTime());
+	}
 }

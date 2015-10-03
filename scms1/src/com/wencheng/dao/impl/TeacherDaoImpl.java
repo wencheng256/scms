@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.sf.json.JSONArray;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -46,6 +47,26 @@ public class TeacherDaoImpl extends ObjectDaoImpl<Teacher> implements TeacherDao
 		}finally{
 			HibernateUtil.closeSession();
 		}
+	}
+	@Override
+	public Teacher verified(String username, String password) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			String queryString = "select distinct t from Teacher t left join fetch t.school where t.username = :name and t.password = :password";
+			Query query = session.createQuery(queryString).setString("name",username).setString("password", password);
+			return (Teacher) query.uniqueResult();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+	}
+	@Override
+	public Teacher find(int id) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		String queryString = "select distinct t from Teacher t left join  t.projects where t.id = :id";
+		Query query = session.createQuery(queryString).setInteger("id", id);
+		return (Teacher) query.uniqueResult();
 	}
 
 }

@@ -42,9 +42,6 @@
                     <th scope="col">
                         学院
                     </th>
-                    <th scope="col">
-                        操作
-                    </th>
                 </tr>
                 <c:forEach items="${projects}" var="pro">
 	                <tr align="center">
@@ -70,9 +67,6 @@
 	                    <td>
 							${pro.school.name}	                        
 	                    </td>
-	                    <td>&nbsp;
-	                        
-	                    </td>
 	                </tr>
                 </c:forEach>
                 
@@ -85,7 +79,7 @@
 		<%for(int i = 0; i<(Integer)(request.getAttribute("pages")); i++){ %>
 		<div class='NowItemStyle'><a href='javascript:void(0)' target='_self'><%=i+1 %></a></div>
 		<%} %>
-		<div class=''><a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=2' target='_self'>下一页</a></div><div class=''><a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=3' target='_self'>尾页</a></div><div class=''>总共<b>44</b>条数据</div><div class=''>每页<b>20</b>条数据</div><div class=''><b>1</b>/3</div><div class='SearchStyle'><input type='text' id='john_Page_Search' onkeydown="if(event.keyCode == 13){page_searchIndex();}"/></div><div class=''><input type='button' value='Go' onclick="page_searchIndex()"/></div></div>
+		<div class=''><a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=2' target='_self'>下一页</a></div><div class=''><a href='http://sm.zk0731.com/OnlineTeaching/StudentMaterial.aspx?page=3' target='_self'>尾页</a></div><div class=''>总<b>${pages }</b>页</div><div class=''>每页<b>20</b>条数据</div><div class=''><b>1</b>/${nowpage }</div><div class='SearchStyle'><input type='text' id='john_Page_Search' onkeydown="if(event.keyCode == 13){page_searchIndex();}"/></div><div class=''><input type='button' value='Go' onclick="page_searchIndex()"/></div></div>
             </div>
         </div>
         <div class="footer">

@@ -95,8 +95,8 @@
         </tr>
         <tr>
             <td colspan="5" style="position:relative;">
-                <textarea name="content" id="edit" cols="80" style="width:100%;" rows="6" class="input_2">
-                	${jou.content }
+                <textarea name="jcontent" id="edit" cols="80" style="width:100%;" rows="6" class="input_2">
+                	${jou.jcontent }
                 </textarea>
             </td>
         </tr>
@@ -121,7 +121,7 @@
 			showMsg("标题不能为空","title");
 			return;
 		}
-		if(form.content.value == ""){
+		if(form.jcontent.value == ""){
 			showMsg("内容不能为空","edit");
 			return;
 		}

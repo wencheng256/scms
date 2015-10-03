@@ -45,7 +45,7 @@ public class OtherProject extends HttpServlet {
 		request.setAttribute("project", project);
 		String id = request.getParameter("id");
 		if(id == null){
-			response.sendRedirect(request.getContextPath()+"/error.jsp");
+			response.sendRedirect(request.getContextPath()+"/error");
 			return;
 		}
 		request.setAttribute("id", id);
