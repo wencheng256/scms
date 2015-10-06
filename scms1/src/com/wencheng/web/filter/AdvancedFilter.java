@@ -42,14 +42,6 @@ public class AdvancedFilter implements Filter {
             FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        //得到在web.xml中配置的字符编码
-        String charset = filterConfig.getInitParameter("charset");
-        if(charset==null){
-            charset = defaultCharset;
-        }
-        request.setCharacterEncoding(charset);
-        response.setCharacterEncoding(charset);
-        response.setContentType("text/html;charset="+charset);
         
         AdvancedRequest requestWrapper = new AdvancedRequest(request);
         chain.doFilter(requestWrapper, response);

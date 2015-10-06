@@ -85,6 +85,19 @@ public class ObjectDaoImpl<T> implements ObjectDao<T> {
 			HibernateUtil.closeSession();
 		}
 	}
+	public T find(Class<T> cla,String id) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			String queryString = "SELECT distinct p from "+cla.getName()+" p where p.propkey = :id";
+			Query query = session.createQuery(queryString).setString("id", id);
+			return (T) query.uniqueResult();
+		}catch(HibernateException e){
+			e.printStackTrace();
+			return null;
+		}finally{
+		}
+	}
 
 	@Override
 	public List<T> list(String name) {
@@ -98,7 +111,6 @@ public class ObjectDaoImpl<T> implements ObjectDao<T> {
 			e.printStackTrace();
 			return null;
 		}finally{
-			HibernateUtil.closeSession();
 		}
 	}
 

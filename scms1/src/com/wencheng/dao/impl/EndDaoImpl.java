@@ -1,5 +1,6 @@
 package com.wencheng.dao.impl;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
@@ -32,9 +33,10 @@ public class EndDaoImpl extends ObjectDaoImpl<EndReport> implements EndDao {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSession();
 		try{
-			return (EndReport) session.createCriteria(EndReport.class).createAlias("project", "pro").add(Restrictions.eq("id", project)).uniqueResult();
+			String queryString = "select distinct e from EndReport e where e.project.id = :id";
+			Query query = session.createQuery(queryString).setInteger("id",project);
+			return (EndReport) query.uniqueResult();
 		}finally{
-			HibernateUtil.closeSession();
 		}
 	}
 

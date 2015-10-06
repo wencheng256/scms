@@ -1,5 +1,6 @@
 package com.wencheng.domain;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
 public class School {
@@ -54,5 +56,27 @@ public class School {
 	}
 	public void setTeachers(List<Teacher> teachers) {
 		this.teachers = teachers;
+	}
+	@Transient
+	public int getImportant(){
+		Iterator<Project> it = projects.iterator();
+		int size = 0;
+		while(it.hasNext()){
+			Project next = it.next();
+			if(next.isImportant()){
+				size++;
+			}
+		}
+		return size;
+	}
+	@Transient
+	public int getJouNum(){
+		Iterator<Project> it = projects.iterator();
+		int size = 0;
+		while(it.hasNext()){
+			Project next = it.next();
+			size+=next.getJournals().size();
+		}
+		return size;
 	}
 }

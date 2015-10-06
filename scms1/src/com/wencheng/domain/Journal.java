@@ -19,6 +19,7 @@ import javax.persistence.Transient;
 public class Journal {
 	
 	private int id;
+	private boolean readed = false;
 	private int status;					//0草稿 1私有 2公开 3回收站
 	private Student editor;
 	private String jcontent;
@@ -26,7 +27,7 @@ public class Journal {
 	private Project project;
 	private Date time=new Date();
 	private String title;
-	private SimpleDateFormat sm = new SimpleDateFormat("YYYY-mm-dd");
+	private SimpleDateFormat sm = new SimpleDateFormat("YYYY-MM-dd");
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -91,5 +92,12 @@ public class Journal {
 	@Transient
 	public String getDate(){
 		return sm.format(time);
+	}
+	@Column(nullable=true)
+	public boolean isReaded() {
+		return readed;
+	}
+	public void setReaded(boolean read) {
+		this.readed = read;
 	}
 }

@@ -38,14 +38,32 @@ public class TeacherDaoImpl extends ObjectDaoImpl<Teacher> implements TeacherDao
 			HibernateUtil.closeSession();
 		}
 	}
-	@Override
-	public Object[] listProject(int project) {
+	public List<Teacher> listSchool(int school,int start,int rows) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSession();
 		try{
-			return (Object[]) session.createCriteria(Project.class).createAlias("teacher.school", "sch",JoinType.LEFT_OUTER_JOIN).createAlias("teacher","teach",JoinType.LEFT_OUTER_JOIN).add(Restrictions.eq("id", 1)).setProjection(Projections.projectionList().add(Projections.property("teach.name")).add(Projections.property("teach.identity")).add(Projections.property("teach.phone")).add(Projections.property("teach.phone")).add(Projections.property("teach.email")).add(Projections.property("sch.name"))).uniqueResult();
+			return session.createCriteria(Teacher.class).createAlias("school","scho",JoinType.LEFT_OUTER_JOIN).add(Restrictions.eq("scho.id", school)).setFirstResult(start).setMaxResults(rows).list();
 		}finally{
-			HibernateUtil.closeSession();
+		}
+	}
+	public List<Teacher> list(int start,int rows) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			return session.createCriteria(Teacher.class).setFirstResult(start).setMaxResults(rows).list();
+		}finally{
+		}
+	}
+	@Override
+	public Teacher listProject(int teacher) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSession();
+		try{
+			String queryString = "select distinct t from Project p left join p.teacher t where p.id = :id";
+			Query query = session.createQuery(queryString).setInteger("id", teacher);
+			
+			return (Teacher) query.uniqueResult();
+		}finally{
 		}
 	}
 	@Override
@@ -67,6 +85,19 @@ public class TeacherDaoImpl extends ObjectDaoImpl<Teacher> implements TeacherDao
 		String queryString = "select distinct t from Teacher t left join  t.projects where t.id = :id";
 		Query query = session.createQuery(queryString).setInteger("id", id);
 		return (Teacher) query.uniqueResult();
+	}
+	
+	public Long getRows(){
+		Session session = HibernateUtil.getSession();
+		String queryString = "select count(distinct t) from Teacher t";
+		Query query = session.createQuery(queryString);
+		return (Long) query.uniqueResult();
+	}
+	public Long getSchoolRows(int school){
+		Session session = HibernateUtil.getSession();
+		String queryString = "select count(distinct t) from Teacher t where t.school.id = :school";
+		Query query = session.createQuery(queryString).setInteger("school", school);
+		return (Long) query.uniqueResult();
 	}
 
 }

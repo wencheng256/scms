@@ -46,7 +46,7 @@ public class Teacher extends HttpServlet {
 		SchoolServiceImpl ss = new SchoolServiceImpl();
 		List<School> schools = ss.list();
 		request.setAttribute("schools",schools);
-		Object[] teacher = ts.listProject(request);
+		com.wencheng.domain.Teacher teacher = ts.listProject(request);
 		request.setAttribute("teacher", teacher);
 		//dispatcher
 		request.getRequestDispatcher("/WEB-INF/views/upper/student/teacher.jsp").forward(request, response);

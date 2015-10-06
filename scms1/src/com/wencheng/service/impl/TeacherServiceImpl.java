@@ -51,7 +51,7 @@ public class TeacherServiceImpl implements TeacherService {
 		return dao.listSchool(Integer.parseInt(school));
 	}
 	@Override
-	public Object[] listProject(HttpServletRequest request) {
+	public Teacher listProject(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Project pro = (Project) request.getSession().getAttribute("project");
 		return dao.listProject(pro.getId());

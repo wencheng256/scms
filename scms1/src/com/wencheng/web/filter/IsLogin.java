@@ -34,7 +34,9 @@ public class IsLogin implements Filter {
 			response.sendRedirect(request.getContextPath()+"/login");
 			return;
 		}
-		if(!WebUtils.isLogin(request, "project")){
+		Project pro1 = (Project) request.getSession().getAttribute("project");
+		int id = (Integer) request.getSession().getAttribute("login");
+		if( pro1 == null || pro1.getId() != id){
 			ProjectService ps = new ProjectServiceImpl();
 			Project pro = ps.find(request);
 			if(pro == null){

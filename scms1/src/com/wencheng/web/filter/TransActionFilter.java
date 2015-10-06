@@ -29,11 +29,16 @@ public class TransActionFilter implements Filter {
 			FilterChain arg2) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) arg0;
 		HttpServletResponse response = (HttpServletResponse) arg1;
-		arg2.doFilter(request, response);
-		Session session = HibernateUtil.getSession();
-		if(session.isOpen()){
-			session.close();
+		try{
+			arg2.doFilter(request, response);
+		}finally{
+			Session session = HibernateUtil.getSession();
+			if(session.isOpen()){
+				session.close();
+			}
 		}
+		
+
 	}
 
 	@Override

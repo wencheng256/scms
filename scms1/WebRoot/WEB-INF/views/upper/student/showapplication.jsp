@@ -44,7 +44,7 @@
             	是
             </c:if>
             <c:if test="${!app.ispublic}">
-            	是
+            	否
             </c:if>
             </td>
         </tr>
@@ -112,20 +112,10 @@
         </div>
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </div>
-    <script>
-    var ue = UE.getEditor('edit');
-    var form = document.forms[0];
-    function onSaveProblem(){
-		if(form.title.value == ""){
-			showMsg("标题不能为空","title");
-			return;
-		}
-		if(form.content.value == ""){
-			showMsg("内容不能为空","edit");
-			return;
-		}
-		form.submit();
-    }
+        <script type="text/javascript">
+    	function onSaveProblem(){
+    		window.location = "${path}student/application";
+    	}
     </script>
 </body>
 </html>

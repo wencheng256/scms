@@ -33,6 +33,7 @@ public class Project {
 	private MiddleReport middleReport;					//中期报告
 	private EndReport endReport;						//结题报告
 	private List<Message> messages = new LinkedList<Message>();	//站内信
+	private List<Message> messages1 = new LinkedList<Message>();	//站内信
 	private Account account;							//登陆账户
 	private int process;								//项目进度
 	private boolean important;
@@ -91,7 +92,7 @@ public class Project {
 	public void setSchool(School school) {
 		this.school = school;
 	}
-	@OneToMany(mappedBy="project")
+	@OneToMany(mappedBy="project",cascade=CascadeType.ALL)
 	public List<Student> getMember() {
 		return member;
 	}
@@ -106,41 +107,51 @@ public class Project {
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
-	@OneToMany(mappedBy="project",fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="project",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	public List<Journal> getJournals() {
 		return journals;
 	}
 	public void setJournals(List<Journal> journals) {
 		this.journals = journals;
 	}
-	@OneToOne(mappedBy="project",fetch=FetchType.LAZY)
+	@OneToOne(mappedBy="project",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	public ApplicationReport getAppliocationReport() {
 		return appliocationReport;
 	}
 	public void setAppliocationReport(ApplicationReport appliocationReport) {
 		this.appliocationReport = appliocationReport;
 	}
-	@OneToOne(mappedBy="project",fetch=FetchType.LAZY)
+	@OneToOne(mappedBy="project",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	public MiddleReport getMiddleReport() {
 		return middleReport;
 	}
 	public void setMiddleReport(MiddleReport middleReport) {
 		this.middleReport = middleReport;
 	}
-	@OneToOne(mappedBy="project",fetch=FetchType.LAZY)
+	@OneToOne(mappedBy="project",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	public EndReport getEndReport() {
 		return endReport;
 	}
 	public void setEndReport(EndReport endReport) {
 		this.endReport = endReport;
 	}
-	@OneToMany(mappedBy="toProject",fetch=FetchType.LAZY)
+	
+	@OneToMany(mappedBy="toProject",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	public List<Message> getMessages() {
 		return messages;
 	}
 	public void setMessages(List<Message> messages) {
 		this.messages = messages;
 	}
+	
+	@OneToMany(mappedBy="fromProject",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	public List<Message> getMessages1() {
+		return messages1;
+	}
+	public void setMessages1(List<Message> messages) {
+		this.messages1 = messages;
+	}
+	
 	@OneToOne(mappedBy="project",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	public Account getAccount() {
 		return account;
@@ -154,14 +165,14 @@ public class Project {
 	public void setProcess(int process) {
 		this.process = process;
 	}
-	@OneToMany(mappedBy="project",fetch=FetchType.LAZY)	
+	@OneToMany(mappedBy="project",fetch=FetchType.LAZY,cascade=CascadeType.ALL)	
 	public List<Error> getErrors() {
 		return errors;
 	}
 	public void setErrors(List<Error> errors) {
 		this.errors = errors;
 	}
-	@OneToMany(mappedBy="project",fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="project",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	public List<Fee> getFees() {
 		return fees;
 	}

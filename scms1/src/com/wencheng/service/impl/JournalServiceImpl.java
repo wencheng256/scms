@@ -1,5 +1,6 @@
 package com.wencheng.service.impl;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +34,14 @@ public class JournalServiceImpl implements JournalService {
 	public List<Journal> list(HttpServletRequest request){
 		Project proj = (Project) request.getSession().getAttribute("project");
 		return dao.list(proj.getId());
+	}
+	@Override
+	public List<Journal> listManager(HttpServletRequest request){
+		String id = request.getParameter("id");
+		if(id == null){
+			return new LinkedList<Journal>();
+		}
+		return dao.list(Integer.parseInt(id));
 	}
 	@Override
 	public Journal find(HttpServletRequest request) {

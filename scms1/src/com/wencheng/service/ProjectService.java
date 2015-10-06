@@ -14,10 +14,12 @@ public interface ProjectService {
 	public boolean checkNum(HttpServletRequest request);
 	public Project find(HttpServletRequest request);
 	public List<Project> list(int start,int rows);
+	public List<Project> listSchool(int school,int start,int rows);
 	public List<Project> listTeacher(HttpServletRequest request,int start,int rows);
 	public int getRows();
 	public int getTeacherRows(HttpServletRequest request);
 	public Project findProject(HttpServletRequest request);
 	public boolean addTeacher(HttpServletRequest request);
 	public Project findOther(HttpServletRequest request);
+	public List<String> getGrades();
 }

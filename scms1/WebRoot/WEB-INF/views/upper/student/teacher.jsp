@@ -38,11 +38,11 @@
             <th width="20%">学院</th>
         </tr>
         <tr>
-            <td style="text-align:center;" width="20%">${teacher[0]}</td>
-            <td style="text-align:center;" width="20%">${teacher[1]}</td>
-            <td style="text-align:center;" width="20%">${teacher[2]}</td>
-            <td style="text-align:center;" width="20%">${teacher[3]}</td>
-            <td style="text-align:center;" width="20%">${teacher[4]}</td>
+            <td style="text-align:center;" width="20%">${teacher.name}</td>
+            <td style="text-align:center;" width="20%">${teacher.identity}</td>
+            <td style="text-align:center;" width="20%">${teacher.phone}</td>
+            <td style="text-align:center;" width="20%">${teacher.email}</td>
+            <td style="text-align:center;" width="20%">${teacher.school.name}</td>
         </tr>
     </table>
 </div>

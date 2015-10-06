@@ -405,6 +405,260 @@
     <servlet-name>EditPersonAction</servlet-name>
     <servlet-class>com.wencheng.web.controller.teacher.EditPersonAction</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerRegister</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckManagerName</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.CheckManagerName</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManageRegister</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.ManageRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginUI</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.LoginUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManageLoginAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.ManageLoginAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerIndex</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerIndex</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StaticIndex</servlet-name>
+    <servlet-class>com.wencheng.web.ui.statics.StaticIndex</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Export</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.Export</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CreateZip</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.CreateZip</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Download</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.Download</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteExport</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.DeleteExport</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerProjectList</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.ManagerProjectList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerProjectPage</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerProjectPage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerApplicationPage</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerApplicationPage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerMiddle</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerMiddle</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerEnd</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerEnd</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerJournalList</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerJournalList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CreateNews</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.CreateNews</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewsAction</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.NewsAction</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewsList</servlet-name>
+    <servlet-class>com.wencheng.web.ui.NewsList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MyNews</servlet-name>
+    <servlet-class>com.wencheng.web.ui.MyNews</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerEditor</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.ManagerEditor</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerNewsPage</servlet-name>
+    <servlet-class>com.wencheng.web.ui.ManagerNewsPage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteNews</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.DeleteNews</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerNewsList</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerNewsList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeacherList</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.TeacherList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerClean</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerClean</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManageDelete</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.ManageDelete</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerBegin</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerBegin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeGrade</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.ChangeGrade</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerApplications</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerApplications</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerMiddles</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerMiddles</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ManagerEnds</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.ManagerEnds</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteTeacher</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.DeleteTeacher</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteProject</servlet-name>
+    <servlet-class>com.wencheng.web.controller.manager.DeleteProject</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckManager</servlet-name>
+    <servlet-class>com.wencheng.web.ui.manager.CheckManager</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -610,7 +864,7 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>TeacherRegister</servlet-name>
-    <url-pattern>/teacher/register</url-pattern>
+    <url-pattern>/teacherregister</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>TeacherRegisterAction</servlet-name>
@@ -740,6 +994,146 @@
     <servlet-name>EditPersonAction</servlet-name>
     <url-pattern>/teacher/editpersoninfoaction</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerRegister</servlet-name>
+    <url-pattern>/managerregister</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckManagerName</servlet-name>
+    <url-pattern>/checkmanagername</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManageRegister</servlet-name>
+    <url-pattern>/managerregisteraction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginUI</servlet-name>
+    <url-pattern>/managerlogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManageLoginAction</servlet-name>
+    <url-pattern>/manageloginaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerIndex</servlet-name>
+    <url-pattern>/manager/index</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StaticIndex</servlet-name>
+    <url-pattern>/static/index</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Export</servlet-name>
+    <url-pattern>/manager/export</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateZip</servlet-name>
+    <url-pattern>/managercreatezip</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Download</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteExport</servlet-name>
+    <url-pattern>/manager/deleteexport</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerProjectList</servlet-name>
+    <url-pattern>/manager/projectlist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerProjectPage</servlet-name>
+    <url-pattern>/manager/otherproject</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerApplicationPage</servlet-name>
+    <url-pattern>/manager/otherapplication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerMiddle</servlet-name>
+    <url-pattern>/manager/othermiddle</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerEnd</servlet-name>
+    <url-pattern>/manager/otherend</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerJournalList</servlet-name>
+    <url-pattern>/manager/otherjournallist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateNews</servlet-name>
+    <url-pattern>/manager/createnews</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewsAction</servlet-name>
+    <url-pattern>/manager/newsaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MyNews</servlet-name>
+    <url-pattern>/manager/mynews</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerEditor</servlet-name>
+    <url-pattern>/manager/editnewsaction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerNewsPage</servlet-name>
+    <url-pattern>/manager/newspage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteNews</servlet-name>
+    <url-pattern>/manager/deletenews</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerNewsList</servlet-name>
+    <url-pattern>/manager/newslist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeacherList</servlet-name>
+    <url-pattern>/manager/teacherlist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerClean</servlet-name>
+    <url-pattern>/manager/clean</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManageDelete</servlet-name>
+    <url-pattern>/managedelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerBegin</servlet-name>
+    <url-pattern>/manager/begin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeGrade</servlet-name>
+    <url-pattern>/changegrade</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerApplications</servlet-name>
+    <url-pattern>/manager/applications</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerMiddles</servlet-name>
+    <url-pattern>/manager/middles</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManagerEnds</servlet-name>
+    <url-pattern>/manager/ends</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteTeacher</servlet-name>
+    <url-pattern>/manager/deleteteacher</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteProject</servlet-name>
+    <url-pattern>/manager/deleteproject</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckManager</servlet-name>
+    <url-pattern>/manager/checkmanager</url-pattern>
+  </servlet-mapping>
     <filter>
         <filter-name>isLogin</filter-name>
         <filter-class>com.wencheng.web.filter.IsLogin</filter-class>
@@ -786,6 +1180,14 @@
     <filter-mapping>
         <filter-name>TransFilter</filter-name>
         <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>MangerFilter</filter-name>
+        <filter-class>com.wencheng.web.filter.ManageFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MangerFilter</filter-name>
+        <url-pattern>/manager/*</url-pattern>
     </filter-mapping>
 
 </web-app>

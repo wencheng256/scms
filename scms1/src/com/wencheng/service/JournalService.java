@@ -10,6 +10,7 @@ public interface JournalService {
 	
 	public boolean create(HttpServletRequest request);
 	public List<Journal> list(HttpServletRequest request);
+	public List<Journal> listManager(HttpServletRequest request);
 	public List<Journal> listOther(HttpServletRequest request);
 	public Journal find(HttpServletRequest request);
 	public Journal findOther(HttpServletRequest request);

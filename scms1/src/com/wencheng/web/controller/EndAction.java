@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wencheng.domain.EndReport;
 import com.wencheng.service.impl.EndServiceImpl;
 
 public class EndAction extends HttpServlet {

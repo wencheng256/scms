@@ -83,5 +83,10 @@
         </div>
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </div>
+    <script type="text/javascript">
+    	function onSaveProblem(){
+    		window.location = "${path}student/middle";
+    	}
+    </script>
 </body>
 </html>

@@ -32,14 +32,14 @@
         <tr>
             <th style="text-align:center;" width="5%">序号</th>
             <th style="text-align:center;" width="5%">姓名</th>
-            <th style="text-align:center;" width="12%">学号</th>
-            <th style="text-align:center;" width="11%">手机</th>
+            <th style="text-align:center;" width="11%">学号</th>
+            <th style="text-align:center;" width="10%">手机</th>
             <th width="10%">学历</th>
             <th width="15%">学院</th>
             <th width="15%">邮箱</th>
             <th style="text-align:center;" width="5%">队长</th>
             <th style="text-align:center;" width="5%">选择</th>
-            <th style="text-align:center;" width="3%">删除</th>
+            <th style="text-align:center;" width="5%">删除</th>
         </tr>
 	<c:forEach items="${students}" var="stu" varStatus="statu">
         <tr style="height: 28px" class="tdbg" align="center">

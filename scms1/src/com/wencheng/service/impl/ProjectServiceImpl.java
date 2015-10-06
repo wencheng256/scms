@@ -3,6 +3,7 @@ package com.wencheng.service.impl;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -148,5 +149,22 @@ public class ProjectServiceImpl implements ProjectService{
 		Teacher t = (Teacher) session.getAttribute("teacher");
 		long rows = dao.getTeacherRows(Integer.parseInt(grade), t.getId());
 		return (int)rows;
+	}
+
+	@Override
+	public List<String> getGrades() {
+		// TODO Auto-generated method stub
+		return dao.getGrades();
+	}
+	public List<Map<String,String>> getGradesMap() {
+		// TODO Auto-generated method stub
+		return dao.getGradesMap();
+	}
+
+	@Override
+	public List<Project> listSchool(int school, int start, int rows) {
+		// TODO Auto-generated method stub
+		String grade = prop.get("grade");
+		return dao.listSchool(school,Integer.parseInt(grade),start,rows);
 	}
 }
